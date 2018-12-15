@@ -1,0 +1,6 @@
+module Pods_Mockup {
+  umbrella header "Pods-Mockup-umbrella.h"
+
+  export *
+  module * { export * }
+}
