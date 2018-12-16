@@ -11,6 +11,7 @@
 		0027349421C53BC800AC5A76 /* steelfish rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0027349321C53BA900AC5A76 /* steelfish rg.ttf */; };
 		003B131021C54DEA0024092F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B130F21C54DEA0024092F /* RegisterVC.swift */; };
 		0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */; };
+		00BF1EC021C6460A0020D86B /* EventViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF1EBF21C6460A0020D86B /* EventViewVC.swift */; };
 		00C6219A21B5CA9E00BB0CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */; };
 		00C6219C21B5CA9F00BB0CB1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6219B21B5CA9F00BB0CB1 /* LoginVC.swift */; };
 		00C6219F21B5CA9F00BB0CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C6219D21B5CA9F00BB0CB1 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		0027349321C53BA900AC5A76 /* steelfish rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "steelfish rg.ttf"; sourceTree = "<group>"; };
 		003B130F21C54DEA0024092F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventsVC.swift; sourceTree = "<group>"; };
+		00BF1EBF21C6460A0020D86B /* EventViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewVC.swift; sourceTree = "<group>"; };
 		00C6219621B5CA9E00BB0CB1 /* Mockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00C6219B21B5CA9F00BB0CB1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				00C6219B21B5CA9F00BB0CB1 /* LoginVC.swift */,
 				003B130F21C54DEA0024092F /* RegisterVC.swift */,
 				0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */,
+				00BF1EBF21C6460A0020D86B /* EventViewVC.swift */,
 				00C6219D21B5CA9F00BB0CB1 /* Main.storyboard */,
 				00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */,
 				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
@@ -324,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00BF1EC021C6460A0020D86B /* EventViewVC.swift in Sources */,
 				003B131021C54DEA0024092F /* RegisterVC.swift in Sources */,
 				0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */,
 				00C6219C21B5CA9F00BB0CB1 /* LoginVC.swift in Sources */,

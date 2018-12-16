@@ -24,25 +24,30 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     
-    // ============================== TABLE FUNCTIONS ============================
+// ============================== TABLE FUNCTIONS ============================
+    
+    // Count received events in eventsList
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsList.count
     }
     
+    // Populate data in cells
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "protoEventCell", for: indexPath) as! eventUICell
-        cell.labelEvent_id.text = eventsList[indexPath.row].event_id
+        //cell.labelEvent_id.text = eventsList[indexPath.row].event_id
         cell.labelDate.text = eventsList[indexPath.row].date
         cell.labelLocation.text = eventsList[indexPath.row].location
         cell.labelSport.text = eventsList[indexPath.row].sport
         cell.labelFirstName.text = eventsList[indexPath.row].first_name
-        cell.labelLatitude.text = eventsList[indexPath.row].latitude
-        cell.labelLongitude.text = eventsList[indexPath.row].longitude
+        //cell.labelLatitude.text = eventsList[indexPath.row].latitude
+        //cell.labelLongitude.text = eventsList[indexPath.row].longitude
         
         // Not string data converted to String
         cell.labelSubscribed.text = "\(eventsList[indexPath.row].nb_part_sub)"
         cell.labelPart_max.text = "\(eventsList[indexPath.row].nb_part_max)"
-        cell.labelPrice_max.text = "\(eventsList[indexPath.row].price_per_part)"
+        cell.labelPrice.text = "\(eventsList[indexPath.row].price_per_part)"
         
         // Last Step : Image download through AlamofireImage
         if let organizerID = eventsList[indexPath.row].organizer_id as? String {
@@ -67,59 +72,48 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
+    // Define the number of sections - normally its 1
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Evenement en cas de selection d'une ligne
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detail: EventDescriptionController
-        detail = self.storyboard?.instantiateViewController(withIdentifier: "EventDescriptionController") as! EventDescriptionController
+        let detail: EventViewVC
+        detail = self.storyboard?.instantiateViewController(withIdentifier: "EventViewVC") as! EventViewVC
         self.navigationController?.pushViewController(detail, animated: true)
         
         detail.LocationData = eventsList[indexPath.row].location
-        detail.LatitudeData = eventsList[indexPath.row].latitude
-        detail.LongitudeData = eventsList[indexPath.row].longitude
+        detail.LatitudeData = eventsList[indexPath.row].latitude!
+        detail.LongitudeData = eventsList[indexPath.row].longitude!
         
     }
     
     
-}
+} // Fin de la class CurrentEventsVC
 
+// ======================= CELL CONFIGURATION ================================
 
-
-
-
-
-
-
-
-
-// ================= CELL CONFIGURATION ================================
 class eventUICell: UITableViewCell {
     
-    @IBOutlet weak var labelEvent_id: UILabel!
+    //@IBOutlet weak var labelEvent_id: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelSport: UILabel!
     @IBOutlet weak var labelSubscribed: UILabel!
     @IBOutlet weak var labelPart_max: UILabel!
-    @IBOutlet weak var labelPrice_max: UILabel!
+    @IBOutlet weak var labelPrice: UILabel!
     @IBOutlet weak var UIImage_OPP: UIImageView!
     @IBOutlet weak var labelFirstName: UILabel!
-    @IBOutlet weak var labelLatitude: UILabel!
-    @IBOutlet weak var labelLongitude: UILabel!
+    //@IBOutlet weak var labelLatitude: UILabel!
+    //@IBOutlet weak var labelLongitude: UILabel!
     
 }
 
-
-
-
-
-
-
-
-
 // =========================== eventClass configuration ==============
+
 public class eventClass {
     let event_id: String
     let date: String
@@ -133,6 +127,7 @@ public class eventClass {
     let latitude: String?
     let longitude: String?
     
+    // Initialisation de la classe
     
     init(data: [String:Any]) {
         self.event_id = data["event_id"] as! String

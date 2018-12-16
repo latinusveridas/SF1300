@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   type = "1"
+   type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mockup/RegisterVC.swift"
-            timestampString = "566647543.646253"
+            filePath = "Mockup/CurrentEventsVC.swift"
+            timestampString = "566647543.646295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "RegisterVC"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "CurrentEventsVC"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
