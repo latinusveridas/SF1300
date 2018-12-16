@@ -6,17 +6,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/CurrentEventsVC.swift"
-            timestampString = "566647543.646295"
+            timestampString = "566684167.0131789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "CurrentEventsVC"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CurrentEventsVC.eventsList.getter : Swift.Array&lt;Mockup.eventClass&gt;"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/CurrentEventsVC.swift"
+                  timestampString = "566656900.581148"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CurrentEventsVC.eventsList.setter : Swift.Array&lt;Mockup.eventClass&gt;"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/CurrentEventsVC.swift"
+                  timestampString = "566656900.586019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CurrentEventsVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Mockup.CurrentEventsVC"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/CurrentEventsVC.swift"
+                  timestampString = "566656900.587873"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CurrentEventsVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mockup.CurrentEventsVC&gt;"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/CurrentEventsVC.swift"
+                  timestampString = "566656900.5892"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
