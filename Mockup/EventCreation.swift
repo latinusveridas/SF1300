@@ -34,6 +34,7 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
     // Configuration
     dPicker.timezone = NSTimeZone.local
     dPicker.backgroundColor = UIColor.white
+    dPicker.Mode = .date
     
 } 
 
