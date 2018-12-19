@@ -32,7 +32,7 @@ class CreateEventVC: UIViewController {
     
     
     
-// =================== MAIN CLASS FUNCTIONS =================================
+// =================== CLASS HELPER FUNCTIONS =================================
     
     func datePickerValueChanged(_ sender: UIDatePicker){
 
@@ -46,10 +46,11 @@ class CreateEventVC: UIViewController {
         let selectedDate: String = dateFormatter.string(from: sender.date)
 
         print("Selected value \(selectedDate)")
+        DatePicked.text = selectedDate
         
     }
     
-}
+} // End of CreateEventVC class
 
 // ================= HELPERS ==========================================
 
