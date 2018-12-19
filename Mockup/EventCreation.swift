@@ -24,7 +24,7 @@ class CreateEventVC: UIViewController {
         super.viewDidLoad()
             
         // Add an event to call onDidChangeDate function when value is changed.
-        DatePicker.addTarget(self, action: #selector(ViewController.datePickerValueChanged(_:)), for: .valueChanged)
+        DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
     }
 
     @IBAction func updateSelectedDateField(sender: DatePicker) {
