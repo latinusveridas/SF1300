@@ -28,5 +28,9 @@ class CreateEventVC: UIViewController {
 }
 
 func ConfigureDatePicker(dPicker: UIDatePicker) {
-
+    
+    // Configuration
+    dPicker.timewone = NSTimeZone.local
+    dPicker.backgroundColor = UIColor.white
+    
 } 
