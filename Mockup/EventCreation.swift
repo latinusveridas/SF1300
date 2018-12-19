@@ -84,6 +84,8 @@ let sessionManager = SFTokenHandler.sessionManager
 sessionManager.adapter = SFTokenHandler
 sessionManager.retrier = SFTokenHandler
 let urlString = "http://83.217.132.102:3001/"
-    RequestAVSports
+RequestAVSports(targetURL: urlString, theSessionManager:sessionManager) { arr in 
+                                                                         
+}
 
 }
