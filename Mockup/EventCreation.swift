@@ -50,6 +50,19 @@ class CreateEventVC: UIViewController {
         
     }
     
+    func PrepareAndUpload () {
+    
+        var dataLoad = [
+        "date" : DatePicked.text,
+        "strAddress" : Adress.text,
+        "sport" : sportselected.text,
+        "price" : pricefield.text,
+         "part_max" : ParticipantField.text
+        
+        ]
+    
+    }
+    
 } // End of CreateEventVC class
 
 // ================= HELPERS ==========================================
