@@ -169,9 +169,9 @@ func RequestAVSports (targetURL: String, theSessionManager: SessionManaget, comp
             case .success:
                 
                 guard response.result.isSuccess else {return completion(nil)}
-                guard let rawInventory = response.result.value as? [[String:Any]?] else {return completion(nil)}
+                guard let rawInventory = response.result.value as? Array? else {return completion(nil)}
                 
-                completion(xxxx)
+                completion(rawInventory)
                 
             case .failure(let error):
                 print(error)
