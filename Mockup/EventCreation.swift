@@ -27,7 +27,31 @@ class CreateEventVC: UIViewController {
         DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
     }
     
+    
+    
+    
+    
+    
+// =================== MAIN CLASS FUNCTIONS =================================
+    
+    func datePickerValueChanged(_ sender: UIDatePicker){
+
+        // Create date formatter
+        let dateFormatter: DateFormatter = DateFormatter()
+
+        // Set date format
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+
+        // Apply date format
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+
+        print("Selected value \(selectedDate)")
+        
+    }
+    
 }
+
+// ================= HELPERS ==========================================
 
 func ConfigureDatePicker(dPicker: UIDatePicker) {
     
@@ -38,16 +62,4 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
     
 } 
 
-func datePickerValueChanged(_ sender: UIDatePicker){
 
-    // Create date formatter
-    let dateFormatter: DateFormatter = DateFormatter()
-
-    // Set date format
-    dateFormatter.dateFormat = "MM/dd/yyyy"
-
-    // Apply date format
-    let selectedDate: String = dateFormatter.string(from: sender.date)
-
-    print("Selected value \(selectedDate)")
-}
