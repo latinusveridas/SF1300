@@ -21,5 +21,13 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var SportPicker: UIPickerView!
     
 
+    @IBAction func updateSelectedDateField(sender: DatePicker) {
+    DatePicked.text = DatePicker
+    }
+    
 }
 
+class DatePicker: UIDatePicker {
+
+
+}
