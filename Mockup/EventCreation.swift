@@ -20,16 +20,15 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
     
-        override func viewDidLoad() {
-        super.viewDidLoad()
-            
-        // Add an event to call onDidChangeDate function when value is changed.
-        DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+    override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // Add an event to call onDidChangeDate function when value is changed.
+    DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+
+     // Populate the SportPicker
+    SportPicker.dataSource = CollectAvailableSports
     }
-    
-    
-    
-    
     
     
 // =================== CLASS HELPER FUNCTIONS =================================
