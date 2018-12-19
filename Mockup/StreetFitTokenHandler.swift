@@ -127,7 +127,6 @@ class StreetFitTokenHandler: RequestAdapter, RequestRetrier {
 // ================================== MAIN FUNCTIONS ====================================
 
 func populateEventsList (targetURL: String,theSessionManager: SessionManager, completion: @escaping ([eventClass]?) -> Void) {
-
     
     theSessionManager.request(targetURL, method: .get)
         .validate()
@@ -155,4 +154,8 @@ func populateEventsList (targetURL: String,theSessionManager: SessionManager, co
             
     }
     
+} // end of populateEventsList
+
+func RequestAVSports (targetURL: String, theSessionManager: SessionManaget, completion: @escaping (Array?) -> Void {
+
 }
