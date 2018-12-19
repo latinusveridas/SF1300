@@ -76,4 +76,7 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
     
 } 
 
+func CollectAvailableSports() -> Array {
+// This function collec the available sports and return them in an Array
 
+}
