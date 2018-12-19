@@ -55,8 +55,8 @@ class CreateEventVC: UIViewController {
         "date" : DatePicked.text,
         "strAddress" : Adress.text,
         "sport" : sportselected.text,
-        "price" : pricefield.text,
-         "part_max" : ParticipantField.text
+        "price" : priceField.text,
+        "part_max" : ParticipantField.text
         
         ]
     
