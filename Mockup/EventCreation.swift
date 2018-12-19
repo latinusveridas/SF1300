@@ -78,5 +78,11 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
 
 func CollectAvailableSports() -> Array {
 // This function collec the available sports and return them in an Array
+    
+let SFTokenHandler = StreetFitTokenHandler()
+let sessionManager = SFTokenHandler.sessionManager
+sessionManager.adapter = SFTokenHandler
+sessionManager.retrier = SFTokenHandler
+let urlString = "http://83.217.132.102:3001/"
 
 }
