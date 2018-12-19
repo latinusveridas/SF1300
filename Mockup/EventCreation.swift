@@ -27,7 +27,6 @@ class CreateEventVC: UIViewController {
     
 }
 
-class DatePicker: UIDatePicker {
+func ConfigureDatePicker(dPicker: UIDatePicker) {
 
-
-}
+} 
