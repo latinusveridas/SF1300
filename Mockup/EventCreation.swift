@@ -90,7 +90,7 @@ func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
     let sessionManager = SFTokenHandler.sessionManager
     sessionManager.adapter = SFTokenHandler
     sessionManager.retrier = SFTokenHandler
-    let urlString = "http://83.217.132.102:3001/"
+    let urlString = "http://83.217.132.102:3000/sports"
     
     sessionManager.request(urlString)
             .validate()
@@ -115,7 +115,7 @@ func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
             }
         
     }
-    
+
 extension CreateEventVC : UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {

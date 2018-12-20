@@ -404,6 +404,9 @@
                                         <state key="normal" title="Create">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="AGn-8X-xqX" kind="show" id="YVP-LR-Kay"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.23763020830000001" green="0.71237299549999999" blue="0.93291957489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
