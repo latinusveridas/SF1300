@@ -24,6 +24,8 @@ class CreateEventVC: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
+        
+    SportPicker.delegate = SportPickerDelegate.self    
 
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
@@ -114,7 +116,7 @@ func CollectAvailableSports() -> [String] {
 }
 
 
-protocol SportPicker : UIPickerViewDelegate {
+protocol SportPickerDelegate : UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {
         return sportsAV[row]
