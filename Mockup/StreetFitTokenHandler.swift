@@ -156,7 +156,7 @@ func populateEventsList (targetURL: String,theSessionManager: SessionManager, co
     
 } // end of populateEventsList
 
-func RequestAVSports (targetURL: String, theSessionManager: SessionManaget, completion: @escaping (Array?) -> Void {
+func RequestAVSports (targetURL: String, theSessionManager: SessionManager, completion: @escaping ([String]?) -> Void) {
 
         theSessionManager.request(targetURL, method: .get)
         .validate()

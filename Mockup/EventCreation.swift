@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class CreateEventVC: UIViewController {
     
@@ -25,17 +26,19 @@ class CreateEventVC: UIViewController {
     override func viewDidLoad() {
     super.viewDidLoad()
         
-    SportPicker.delegate = SportPickerDelegate.self    
+    SportPicker.delegate = self
 
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
 
      // Collect the available sports
-    sportsAV = CollectAvailableSports()
+    CollectAvailableSports() { result in
+    self.sportsAV = result
+    }
+        
+        
     
     }
-    
-    
 // =================== CLASS HELPER FUNCTIONS =================================
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker){
@@ -80,18 +83,16 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
     
 } 
 
-func CollectAvailableSports() -> [String] {
+func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
 // This function collec the available sports and return them in an Array
-    
-    var collectedSports: [String] = []
 
     let SFTokenHandler = StreetFitTokenHandler()
     let sessionManager = SFTokenHandler.sessionManager
     sessionManager.adapter = SFTokenHandler
     sessionManager.retrier = SFTokenHandler
     let urlString = "http://83.217.132.102:3001/"
-
-    sessionManager.request(targetURL, method: .get)
+    
+    sessionManager.request(urlString)
             .validate()
             .responseJSON { response in
 
@@ -101,8 +102,8 @@ func CollectAvailableSports() -> [String] {
 
                 case .success:
 
-                    guard response.result.isSuccess else {return completion(nil)}
-                    guard let rawInventory = response.result.value as? Array? else {return completion(nil)}
+                    guard response.result.isSuccess else {return completion([])}
+                    guard let rawInventory = response.result.value as? [String] else {return completion([])}
 
                     completion(rawInventory)
 
@@ -111,12 +112,11 @@ func CollectAvailableSports() -> [String] {
 
                 }
 
+            }
+        
     }
     
-}
-
-
-protocol SportPickerDelegate : UIPickerViewDelegate {
+extension CreateEventVC : UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {
         return sportsAV[row]
