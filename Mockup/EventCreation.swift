@@ -111,18 +111,3 @@ func CollectAvailableSports() -> [String] {
     
 }
 
-protocol SportPicker : UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {
-        return "Sports"
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 2.0
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
-    }
-
-}
