@@ -86,11 +86,26 @@ func CollectAvailableSports() -> [String] {
     sessionManager.adapter = SFTokenHandler
     sessionManager.retrier = SFTokenHandler
     let urlString = "http://83.217.132.102:3001/"
-    
-    RequestAVSports(targetURL: urlString, theSessionManager:sessionManager) { arr in 
-          collectedSports = arr                                                                   
-    }
 
-        return(collectedSports)
-    
+    sessionManager.request(targetURL, method: .get)
+            .validate()
+            .responseJSON { response in
+
+                //print(response)
+
+                switch response.result {
+
+                case .success:
+
+                    guard response.result.isSuccess else {return completion(nil)}
+                    guard let rawInventory = response.result.value as? Array? else {return completion(nil)}
+
+                    completion(rawInventory)
+
+                case .failure(let error):
+                    print(error)
+
+                }
+
+    }
 }
