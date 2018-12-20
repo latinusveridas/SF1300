@@ -20,14 +20,16 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
     
+    var sportsAV: [String] = []
+    
     override func viewDidLoad() {
     super.viewDidLoad()
 
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
 
-     // Populate the SportPicker
-    SportPicker.dataSource = CollectAvailableSports()
+     // Collect the available sports
+    sportsAV = CollectAvailableSports()
     
     }
     
@@ -115,7 +117,7 @@ func CollectAvailableSports() -> [String] {
 protocol SportPicker : UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {
-        return "Sports"
+        return sportsAV[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
