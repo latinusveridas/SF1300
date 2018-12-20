@@ -27,13 +27,14 @@ class CreateEventVC: UIViewController {
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
 
      // Populate the SportPicker
-    SportPicker.dataSource = CollectAvailableSports
+    SportPicker.dataSource = CollectAvailableSports()
+    
     }
     
     
 // =================== CLASS HELPER FUNCTIONS =================================
     
-    func datePickerValueChanged(_ sender: UIDatePicker){
+    @objc func datePickerValueChanged(_ sender: UIDatePicker){
 
         // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
@@ -69,16 +70,16 @@ class CreateEventVC: UIViewController {
 func ConfigureDatePicker(dPicker: UIDatePicker) {
     
     // Configuration
-    dPicker.timezone = NSTimeZone.local
+    dPicker.timeZone = NSTimeZone.local
     dPicker.backgroundColor = UIColor.white
-    dPicker.Mode = .date
+    dPicker.datePickerMode = .date
     
 } 
 
-func CollectAvailableSports() -> Array {
+func CollectAvailableSports() -> [String] {
 // This function collec the available sports and return them in an Array
     
-    var collectedSports: Array = []   
+    var collectedSports: [String] = []
 
     let SFTokenHandler = StreetFitTokenHandler()
     let sessionManager = SFTokenHandler.sessionManager
