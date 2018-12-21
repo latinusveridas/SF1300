@@ -90,13 +90,13 @@ func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
     let sessionManager = SFTokenHandler.sessionManager
     sessionManager.adapter = SFTokenHandler
     sessionManager.retrier = SFTokenHandler
-    let urlString = "http://83.217.132.102:3000/sports"
+    let urlString = "http://83.217.132.102:3001/sports"
     
     sessionManager.request(urlString)
             .validate()
             .responseJSON { response in
 
-                //print(response)
+                print(response)
 
                 switch response.result {
 

@@ -88,7 +88,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventCreation.swift"
-            timestampString = "567031174.544389"
+            timestampString = "567066180.4698499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -100,11 +100,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventCreation.swift"
-            timestampString = "567031174.544699"
+            timestampString = "567066180.470296"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -113,14 +113,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Mockup.CreateEventVC.viewDidLoad() -&gt; ()"
                   moduleName = "Mockup"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
-                  timestampString = "567031174.708096"
+                  timestampString = "567066124.177892"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -128,14 +128,14 @@
                   offsetFromSymbolStart = "635">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Array&lt;Swift.String&gt;) -&gt; () in Mockup.CreateEventVC.viewDidLoad() -&gt; ()"
                   moduleName = "Mockup"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
-                  timestampString = "567031174.709721"
+                  timestampString = "567066124.179564"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
