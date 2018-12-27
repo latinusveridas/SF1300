@@ -126,19 +126,27 @@ func isAlamoLoginSuccess(email: String, password: String, completion: @escaping 
             if model.success == 1 {
                 
                 // Loading JWT1 in iPhone Memory
-                
                 let obtainedJWT1 = model.data!.jwt1!
                 
                 let defaults = UserDefaults.standard
                 defaults.set(obtainedJWT1, forKey: "jwt1")
                 print("Stored JWT1 in UserDefault Memory: ", defaults.string(forKey: "jwt1")!)
                 
-                guard let obtainedOrganizerId = model.data?.organizer_id else { return }
+                // Loading Organizer_ID in iPhone Memory
+                if let obtainedOrganizerId = model.data?.organizer_id {
                 
-                defaults.set(obtainedOrganizerId, forKey: "organizerID")
-                print("Stored OrgID is UD Mem ", defaults.string(forKey: "organizerID")!)
-    
-                completion(true)
+                    defaults.set(obtainedOrganizerId, forKey: "organizerID")
+                    print("New Stored Org_ID is ", defaults.string(forKey: "organizerID")!)
+        
+                    completion(true)
+                    
+                } else {
+                    
+                    completion(true)
+                    
+                }
+                
+
             }
             
         } catch {

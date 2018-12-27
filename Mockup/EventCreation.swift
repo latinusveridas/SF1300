@@ -20,6 +20,7 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var CreateEventButton: UIButton!
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
+    @IBOutlet weak var OrgID: UILabel!
     
     var sportsAV: [String] = []
     
@@ -37,8 +38,30 @@ class CreateEventVC: UIViewController {
         
     self.SportPicker.delegate = self
     self.SportPicker.dataSource = self
+        
+    OrgID.text = UserDefaults.standard.string(forKey: "organizerID")
     
     }
+    
+    
+    @IBAction func Action_CreateEvent(_ sender: Any) {
+        // This action create the payload and send it to the server
+        
+        //Prepare the data
+        let data = PrepareData()
+        
+        
+        /*isUploaded(eventData: data){ response in
+            
+            
+        }*/
+        
+    }
+    
+    
+    
+    
+    
 // =================== CLASS HELPER FUNCTIONS =================================
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker){
@@ -47,7 +70,7 @@ class CreateEventVC: UIViewController {
         let dateFormatter: DateFormatter = DateFormatter()
 
         // Set date format
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
 
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
@@ -57,16 +80,29 @@ class CreateEventVC: UIViewController {
         
     }
     
-    func PrepareAndUpload () {
-    
-        var dataLoad = [
-        "date" : DatePicked.text,
-        "strAddress" : Adress.text,
-        "sport" : sportselected.text,
-        "price" : priceField.text,
-        "part_max" : ParticipantField.text
+    func PrepareData () -> [String:String] {
+        
+        // on ajoute les secondes pour etre au format dd/MM/yyyy HH:mm:SS
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        print(DatePicked.text!)
+        print(DatePicked.description)
+        let modDate = dateFormatter.date(from: DatePicked.text!)
+        print(modDate)
+        let strDate = dateFormatter.string(from: modDate)
+        
+        let dataLoad = [
+        "date" : strDate,
+        "address_string" : Adress.text!,
+        "sport" : sportselected.text!,
+        "price" : priceField.text!,
+        "part_max" : ParticipantField.text!,
+        "organizer_id": OrgID.text!
         
         ]
+        
+        print("PREPARE DATA", dataLoad.description)
+        return dataLoad
     
     }
     
@@ -78,8 +114,9 @@ func ConfigureDatePicker(dPicker: UIDatePicker) {
     
     // Configuration
     dPicker.timeZone = NSTimeZone.local
+    dPicker.minimumDate = Date()
     dPicker.backgroundColor = UIColor.white
-    dPicker.datePickerMode = .date
+    dPicker.datePickerMode = .dateAndTime
     
 } 
 
@@ -115,6 +152,57 @@ func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
             }
         
     }
+
+func isUploaded(eventData: [String:String?], completion: @escaping (Bool) -> ()) {
+    // This function upload the event_data and return a bool indicating completion
+    
+    let SFTokenHandler = StreetFitTokenHandler()
+    let sessionManager = SFTokenHandler.sessionManager
+    sessionManager.adapter = SFTokenHandler
+    sessionManager.retrier = SFTokenHandler
+    let urlString = "http://83.217.132.102:3000/auth/experlogin/createevent"
+    
+    //guard let eventData = try? JSONSerialization.data(withJSONObject: eventData, options: .prettyPrinted) else {return}
+    
+    //request.httpMethod = HTTPMethod.post.rawValue
+    
+    let headers: HTTPHeaders = [
+        "Content-Type" : "application/json; charset=UTF-8"
+    ]
+
+    //request.httpBody = payLoad
+    sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
+        .validate()
+        .responseJSON { response in
+            
+            print(response)
+            
+            switch response.result {
+                
+            case .success:
+                
+                guard response.result.isSuccess else {return completion(false)}
+                guard let rawInventory = response.result.value as? [[String:Any]?] else {return completion(false)}
+                
+                print(rawInventory)
+                
+               /* if rawInventory["success"] == "1" {
+                    
+                } else {
+                    
+                }*/
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+    }
+    
+}
+
+
+// =========== EXTENSIONS==============================
 
 extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
 
