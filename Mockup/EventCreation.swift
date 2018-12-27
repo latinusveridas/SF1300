@@ -25,8 +25,6 @@ class CreateEventVC: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
-        
-    SportPicker.delegate = self
 
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
@@ -34,9 +32,11 @@ class CreateEventVC: UIViewController {
      // Collect the available sports
     CollectAvailableSports() { result in
     self.sportsAV = result
+    self.SportPicker.reloadAllComponents()
     }
         
-        
+    self.SportPicker.delegate = self
+    self.SportPicker.dataSource = self
     
     }
 // =================== CLASS HELPER FUNCTIONS =================================
@@ -116,18 +116,22 @@ func CollectAvailableSports(completion: @escaping ([String]) -> ()) {
         
     }
 
-extension CreateEventVC : UIPickerViewDelegate {
+extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,forComponent component: Int) -> String? {
-        return sportsAV[row]
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 2.0
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sportsAV.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        sportselected.text = sportsAV[row]
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return sportsAV[row]
     }
 
 }

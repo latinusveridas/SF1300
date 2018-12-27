@@ -115,6 +115,7 @@ func isAlamoLoginSuccess(email: String, password: String, completion: @escaping 
     
     Alamofire.request(request).responseJSON { response in
 
+            print("!!!!", response)
         
         // On utilise Do..catch pour eviter les problemes
         
@@ -127,10 +128,16 @@ func isAlamoLoginSuccess(email: String, password: String, completion: @escaping 
                 // Loading JWT1 in iPhone Memory
                 
                 let obtainedJWT1 = model.data!.jwt1!
+                
                 let defaults = UserDefaults.standard
                 defaults.set(obtainedJWT1, forKey: "jwt1")
                 print("Stored JWT1 in UserDefault Memory: ", defaults.string(forKey: "jwt1")!)
                 
+                guard let obtainedOrganizerId = model.data?.organizer_id else { return }
+                
+                defaults.set(obtainedOrganizerId, forKey: "organizerID")
+                print("Stored OrgID is UD Mem ", defaults.string(forKey: "organizerID")!)
+    
                 completion(true)
             }
             
@@ -173,6 +180,7 @@ struct AuthData: Codable {
     let changedRows: Int?
     let jwt1 : String?
     let jwt2 : String?
+    let organizer_id : String?
     
     enum CodingKeys: String, CodingKey {
         case fieldCount
@@ -185,6 +193,7 @@ struct AuthData: Codable {
         case changedRows
         case jwt1 = "JWT1"
         case jwt2 = "JWT2"
+        case organizer_id
     }
 }
 
