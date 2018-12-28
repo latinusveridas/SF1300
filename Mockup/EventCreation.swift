@@ -162,15 +162,10 @@ func isUploaded(eventData: [String:String?], completion: @escaping (Bool) -> ())
     sessionManager.retrier = SFTokenHandler
     let urlString = "http://83.217.132.102:3000/auth/experlogin/createevent"
     
-    //guard let eventData = try? JSONSerialization.data(withJSONObject: eventData, options: .prettyPrinted) else {return}
-    
-    //request.httpMethod = HTTPMethod.post.rawValue
-    
     let headers: HTTPHeaders = [
         "Content-Type" : "application/json; charset=UTF-8"
     ]
 
-    //request.httpBody = payLoad
     sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
         .validate()
         .responseJSON { response in
