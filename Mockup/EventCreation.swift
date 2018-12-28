@@ -83,16 +83,15 @@ class CreateEventVC: UIViewController {
     func PrepareData () -> [String:String] {
         
         // on ajoute les secondes pour etre au format dd/MM/yyyy HH:mm:SS
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        let dateFormatter = DateFormatter()
+        //dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         print(DatePicked.text!)
-        print(DatePicked.description)
-        let modDate = dateFormatter.date(from: DatePicked.text!)
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        let modDate = dateFormatter.date(from: CreateEventVC.DatePicked.text!)
         print(modDate)
-        let strDate = dateFormatter.string(from: modDate)
-        
         let dataLoad = [
-        "date" : strDate,
+        "date" : modDate,
         "address_string" : Adress.text!,
         "sport" : sportselected.text!,
         "price" : priceField.text!,
