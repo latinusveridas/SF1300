@@ -64,4 +64,50 @@ class RegisterVC: UIViewController {
     
     }
 
+func isUploaded(userData: [String:String?], completion: @escaping (Bool) -> ()) {
+    // This function upload the event_data and return a bool indicating completion
+    
+    let SFTokenHandler = StreetFitTokenHandler()
+    let sessionManager = SFTokenHandler.sessionManager
+    sessionManager.adapter = SFTokenHandler
+    sessionManager.retrier = SFTokenHandler
+    let urlString = "http://83.217.132.102:3000/auth/users/registerxxxxxx"
+    
+    //guard let eventData = try? JSONSerialization.data(withJSONObject: eventData, options: .prettyPrinted) else {return}
+    
+    //request.httpMethod = HTTPMethod.post.rawValue
+    
+    let headers: HTTPHeaders = [
+        "Content-Type" : "application/json; charset=UTF-8"
+    ]
 
+    //request.httpBody = payLoad
+    sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
+        .validate()
+        .responseJSON { response in
+            
+            print(response)
+            
+            switch response.result {
+                
+            case .success:
+                
+                guard response.result.isSuccess else {return completion(false)}
+                guard let rawInventory = response.result.value as? [[String:Any]?] else {return completion(false)}
+                
+                print(rawInventory)
+                
+               /* if rawInventory["success"] == "1" {
+                    
+                } else {
+                    
+                }*/
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+    }
+    
+}
