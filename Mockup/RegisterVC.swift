@@ -25,6 +25,7 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configuration des textbox
         let textFields = [self.SurnameField,
                           self.NameField,
                           self.BornDateField,
