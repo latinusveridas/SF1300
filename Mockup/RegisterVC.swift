@@ -77,7 +77,7 @@ func isUploaded(userData: [String:String?], completion: @escaping (Bool) -> ()) 
         "Content-Type" : "application/json; charset=UTF-8"
     ]
 
-    sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
+    sessionManager.request(urlString, method: .post, parameters: userData, encoding: JSONEncoding.default, headers: headers)
         .validate()
         .responseJSON { response in
             
