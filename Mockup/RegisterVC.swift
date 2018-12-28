@@ -46,3 +46,21 @@ class RegisterVC: UIViewController {
 }
 
 
+/////
+
+ func PrepareData () -> [String:String] {
+        
+        let dataLoad = [
+        "surname": SurnameField.text!,
+        "name": NameField.text!,
+        "born_date": BornDateField.text!,
+        "password": PasswordField.text!,
+        "email": EmailField.text!,
+        ]
+        
+        print("PREPARED DATA", dataLoad.description)
+        return dataLoad
+    
+    }
+
+
