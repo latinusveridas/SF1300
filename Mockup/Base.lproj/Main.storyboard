@@ -31,11 +31,11 @@
                                         <rect key="frame" x="75" y="52" width="224" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SteelfishRg-Regular" family="Steelfish" pointSize="53"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.74765284902552998" green="0.75576482754922358" blue="0.78010076312030452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.23763020833333334" green="0.71237299548983035" blue="0.9329195748730964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1549501543149065" green="0.39754860767816869" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="johnhoover@gmail.com" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mEV-rI-ubi">
                                 <rect key="frame" x="16" y="283" width="343" height="40"/>
