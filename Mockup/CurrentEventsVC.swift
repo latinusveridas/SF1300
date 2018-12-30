@@ -18,6 +18,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // When data is received, it's filled in eventsList
     var eventsList: [eventClass] = []
+    let refreshControl = UIRefreshControl()
     
     // Loading of the ViewController
     
@@ -37,15 +38,23 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             guard eventsList != nil else {return}
             self.eventsList = eventsList!
             self.tableView.reloadData()
+            
+        }
+        
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
+        refreshControl.addTarget(self, action: #selector(refreshTableEvents), for: UIControl.Event.valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl = refreshControl
+        } else {
+            self.tableView.addSubview(refreshControl)
         }
         
         
         
         
-        
-        
-        
-    }
+    } // End of ViewDidLoad
     
     
 // ============================== TABLE FUNCTIONS ============================
@@ -134,6 +143,30 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
 } // Fin de la class CurrentEventsVC
+
+extension CurrentEventsVC {
+    
+    @objc func refreshTableEvents() {
+        
+        let SFTokenHandler = StreetFitTokenHandler()
+        let sessionManager = SFTokenHandler.sessionManager
+        sessionManager.adapter = SFTokenHandler
+        sessionManager.retrier = SFTokenHandler
+        let urlString = "http://83.217.132.102:3000/auth/experlogin/innerjoin"
+        
+        populateEventsList(targetURL: urlString, theSessionManager: sessionManager) { eventsList in
+            guard eventsList != nil else {return}
+            self.eventsList = eventsList!
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+            return
+            
+        }
+        
+        
+    }
+    
+}
 
 // ======================= CELL CONFIGURATION ================================
 

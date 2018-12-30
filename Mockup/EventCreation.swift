@@ -23,10 +23,17 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var OrgID: UILabel!
     
     var sportsAV: [String] = []
+    var pricePicker: UIPickerView = UIPickerView()
+    let arrPrices = [5,10,15,20,25,30,35,40,45,50]
     
     override func viewDidLoad() {
     super.viewDidLoad()
-
+    self.HideKeyboard()
+        
+    //Tagging SportPicker as 1, PricePicker as 2
+    SportPicker.tag == 1
+    pricePicker.tag == 2
+        
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
 
@@ -35,13 +42,22 @@ class CreateEventVC: UIViewController {
     self.sportsAV = result
     self.SportPicker.reloadAllComponents()
     }
-        
-    self.SportPicker.delegate = self
-    self.SportPicker.dataSource = self
+    
+    // Delegation of the ViewPickers
+    SportPicker.delegate = self
+    SportPicker.dataSource = self
+    pricePicker.dataSource = self
+    pricePicker.delegate = self
+    
+    priceField.inputView = pricePicker
         
     OrgID.text = UserDefaults.standard.string(forKey: "organizerID")
+        
+
+        
+   
     
-    }
+    } // end of viewdidload
     
     
     @IBAction func Action_CreateEvent(_ sender: Any) {
@@ -51,20 +67,35 @@ class CreateEventVC: UIViewController {
         let data = PrepareData()
         
         
-        /*isUploaded(eventData: data){ response in
+        isUploaded(eventData: data){ response in
             
+            if response == true {
+                print("in true isUploaded")
+                let alertController = UIAlertController(title: "StreetFit", message: "Votre évenement à bien été créé !", preferredStyle: UIAlertController.Style.alert)
+                let showNextController = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+                alertController.addAction(showNextController)
+                self.present(alertController,animated: true,completion: nil)
+
+                
+            } else {
+                
+                let alertController = UIAlertController(title: "StreetFit", message: "FAIL", preferredStyle: UIAlertController.Style.alert)
+                let showNextController = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in }
+                
+            }
             
-        }*/
+        }
         
     }
     
-    
-    
-    
-    
 // =================== CLASS HELPER FUNCTIONS =================================
     
-    @objc func datePickerValueChanged(_ sender: UIDatePicker){
+    
+    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
 
         // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
@@ -80,26 +111,26 @@ class CreateEventVC: UIViewController {
         
     }
     
+    
     func PrepareData () -> [String:String] {
         
         // on ajoute les secondes pour etre au format dd/MM/yyyy HH:mm:SS
         let dateFormatter = DateFormatter()
         //dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         print(DatePicked.text!)
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        let modDate = dateFormatter.date(from: CreateEventVC.DatePicked.text!)
-        print(modDate)
-        let dataLoad = [
+        let modDate = DatePicked.text! + ":00"
+        
+        let dataLoad: [String:String]
+        
+        dataLoad = [
         "date" : modDate,
         "address_string" : Adress.text!,
         "sport" : sportselected.text!,
         "price" : priceField.text!,
         "part_max" : ParticipantField.text!,
         "organizer_id": OrgID.text!
-        
         ]
-        
+                
         print("PREPARE DATA", dataLoad.description)
         return dataLoad
     
@@ -176,15 +207,17 @@ func isUploaded(eventData: [String:String?], completion: @escaping (Bool) -> ())
             case .success:
                 
                 guard response.result.isSuccess else {return completion(false)}
-                guard let rawInventory = response.result.value as? [[String:Any]?] else {return completion(false)}
+                guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
                 
                 print(rawInventory)
                 
-               /* if rawInventory["success"] == "1" {
-                    
+                var successStatus = rawInventory!["success"] as! Int
+                
+                if successStatus == 1 {
+                    completion(true)
                 } else {
-                    
-                }*/
+                    completion(false)
+                }
                 
             case .failure(let error):
                 print(error)
@@ -196,7 +229,7 @@ func isUploaded(eventData: [String:String?], completion: @escaping (Bool) -> ())
 }
 
 
-// =========== EXTENSIONS==============================
+// ====================== EXTENSIONS ==============================
 
 extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -205,15 +238,33 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sportsAV.count
+        
+        if pickerView.tag == 1 {
+            return sportsAV.count
+        } else {
+            return arrPrices.count
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView.tag == 1 {
         sportselected.text = sportsAV[row]
+        } else {
+        priceField.text = String(arrPrices[row])
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if pickerView.tag == 1 {
         return sportsAV[row]
+        } else {
+        return String(arrPrices[row])
+        }
+        
     }
 
 }

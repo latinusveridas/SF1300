@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0017AAFD21D8EFB300970162 /* General Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0017AAFC21D8EFB300970162 /* General Helpers.swift */; };
 		001AA40921BBC77500931D75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001AA40821BBC77500931D75 /* Assets.xcassets */; };
 		001DC83821C98D1000A78AFE /* EventCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DC83721C98D1000A78AFE /* EventCreation.swift */; };
 		0027349421C53BC800AC5A76 /* steelfish rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0027349321C53BA900AC5A76 /* steelfish rg.ttf */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0017AAFC21D8EFB300970162 /* General Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Helpers.swift"; sourceTree = "<group>"; };
 		001AA40821BBC77500931D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		001DC83721C98D1000A78AFE /* EventCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreation.swift; sourceTree = "<group>"; };
 		0027349321C53BA900AC5A76 /* steelfish rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "steelfish rg.ttf"; sourceTree = "<group>"; };
@@ -124,16 +126,17 @@
 		00C6219821B5CA9E00BB0CB1 /* Mockup */ = {
 			isa = PBXGroup;
 			children = (
-				00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */,
 				00C6219B21B5CA9F00BB0CB1 /* LoginVC.swift */,
 				003B130F21C54DEA0024092F /* RegisterVC.swift */,
 				0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */,
 				00BF1EBF21C6460A0020D86B /* EventViewVC.swift */,
-				0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */,
 				001DC83721C98D1000A78AFE /* EventCreation.swift */,
 				00C6219D21B5CA9F00BB0CB1 /* Main.storyboard */,
 				00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */,
 				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
+				00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */,
+				0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */,
+				0017AAFC21D8EFB300970162 /* General Helpers.swift */,
 				001AA40821BBC77500931D75 /* Assets.xcassets */,
 				0027349221C53BA300AC5A76 /* Fonts */,
 			);
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BF1EC021C6460A0020D86B /* EventViewVC.swift in Sources */,
+				0017AAFD21D8EFB300970162 /* General Helpers.swift in Sources */,
 				003B131021C54DEA0024092F /* RegisterVC.swift in Sources */,
 				0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */,
 				00C6219C21B5CA9F00BB0CB1 /* LoginVC.swift in Sources */,

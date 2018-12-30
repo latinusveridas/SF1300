@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class RegisterVC: UIViewController {
     
@@ -44,25 +45,30 @@ class RegisterVC: UIViewController {
     }
     
     
-}
-
-
-/////
-
- func PrepareData () -> [String:String] {
-        
+// ====================== CLASS HELPERS FUNCTIONS ========================
+    
+    func PrepareData () -> [String:String] {
+        // This function collect the data and put all the stuff in a Dictionary
         let dataLoad = [
-        "surname": SurnameField.text!,
-        "name": NameField.text!,
-        "born_date": BornDateField.text!,
-        "password": PasswordField.text!,
-        "email": EmailField.text!,
-        ]
+            "surname": SurnameField.text!,
+            "name": NameField.text!,
+            "born_date": BornDateField.text!,
+            "password": PasswordField.text!,
+            "email": EmailField.text!,
+            ]
         
         print("PREPARED DATA", dataLoad.description)
         return dataLoad
-    
+        
     }
+    
+    
+} // End of RegisterClass
+
+
+// ================================= HELPERS ========================================
+
+
 
 func isUploaded(userData: [String:String?], completion: @escaping (Bool) -> ()) {
     // This function upload the userData and return a bool indicating completion

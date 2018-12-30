@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/CurrentEventsVC.swift"
-            timestampString = "567628655.7846611"
+            timestampString = "567887697.733328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventCreation.swift"
-            timestampString = "567637373.888906"
+            timestampString = "567887697.7336299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -125,6 +125,99 @@
                   startingLineNumber = "36"
                   endingLineNumber = "36"
                   offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventCreation.swift"
+            timestampString = "567887697.733692"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CreateEventVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CreateEventVC.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Mockup.CreateEventVC"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
+                  timestampString = "567881719.451511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CreateEventVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Mockup.CreateEventVC"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
+                  timestampString = "567881719.452924"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CreateEventVC.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mockup.CreateEventVC&gt;"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
+                  timestampString = "567881719.454205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CreateEventVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mockup.CreateEventVC&gt;"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
+                  timestampString = "567881719.45548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mockup.CreateEventVC.__deallocating_deinit"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
+                  timestampString = "567881719.456839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
