@@ -92,7 +92,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         cell.labelPart_max.text = "\(eventsList[indexPath.row].nb_part_max)"
         cell.labelPrice.text = "\(eventsList[indexPath.row].price_per_part)"
         
-        cell.UIImage_Sport.image = UIImage(named: "yoga")
+        cell.UIImage_Sport.image = UIImage(named: eventsList[indexPath.row].sport)
         
         var intPartMax = Float(eventsList[indexPath.row].nb_part_max)
         var intSub = Float(eventsList[indexPath.row].nb_part_sub)
