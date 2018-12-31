@@ -32,18 +32,19 @@ class ModProfileVC : ViewController {
     
 } // end of ModProfileVC
 
+// ===================================== EXTENSION ============================================
+
 extension ImageCropVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             img.image = image
             
-        }
-        
+        }   
         dismiss(animated: true, completion: nil)
-    }
-    
-    
+    }    
 }
+
+// ===================================== FUNCTIONS =====================================
 
 func collectUserData(completion: @escaping (Bool) -> ()) {
     // This function collect userData in an Dictionnary
