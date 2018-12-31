@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ImageCropVC : ViewController {
+class ModProfileVC : ViewController {
     
     @IBOutlet weak var img: UIImageView!
     
@@ -18,7 +18,7 @@ class ImageCropVC : ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-    }
+    } // end of viewDidLoad
     
     @IBAction func inClickPickImage(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
@@ -27,7 +27,7 @@ class ImageCropVC : ViewController {
     }
     
     
-}
+} // end of ModProfileVC
 
 extension ImageCropVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
