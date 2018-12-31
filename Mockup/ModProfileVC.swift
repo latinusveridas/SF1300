@@ -83,14 +83,13 @@ func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ())
     
 } //end of function collectUserData
 
-func collectProfilePicture(userID: String) {
+func collectProfilePicture(userID: String)-> UIimage {
 // This function collect the ProfilePicture thanks to the userID
 	
-let SFTokenHandler = StreetFitTokenHandler()
-let sessionManager = SFTokenHandler.sessionManager
-sessionManager.adapter = SFTokenHandler
-sessionManager.retrier = SFTokenHandler
-let urlString = "http://83.217.132.102:3000/auth/experlogin/xxxx"
+	let SFTokenHandler = StreetFitTokenHandler()
+	let sessionManager = SFTokenHandler.sessionManager
+	sessionManager.adapter = SFTokenHandler
+	sessionManager.retrier = SFTokenHandler
 	
     let firstPartURL = "http://83.217.132.102:3000/"
     var organizer_profile_picture = userID.replacingOccurrences(of: "_O_", with: "_OPP_")
@@ -99,11 +98,12 @@ let urlString = "http://83.217.132.102:3000/auth/experlogin/xxxx"
     print(imageURL)
     
 	//AlamofireImage request
-	Alamofire.request(imageURL).responseImage(completionHandler: {response in
+	sessionManager.request(imageURL).responseImage(completionHandler: { response in
 		if let image = response.result.value {
 			DispatchQueue.main.async {
-			cell.UIImage_OPP?.image = image
+			completionHandler()
 			}
 		}
 	})       
+	
 } // end of func collecProfilePicture
