@@ -61,11 +61,9 @@ func collectUserData(completion: @escaping (Bool) -> ()) {
     sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
         .validate()
         .responseJSON { response in
-            
             print(response)
             switch response.result {          
-            case .success:
-                
+            case .success:         
                 guard response.result.isSuccess else {return completion(false)}
                 guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
 
@@ -75,13 +73,10 @@ func collectUserData(completion: @escaping (Bool) -> ()) {
                     completion(true)
                 } else {
                     completion(false)
-                }
-                
+                }   
             case .failure(let error):
-                print(error)
-                
-            }
-            
-    }
+                print(error)            
+            }   // switch
+    } //request
     
-}
+} //function collectUserData
