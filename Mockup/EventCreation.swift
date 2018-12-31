@@ -260,7 +260,7 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if pickerView.tag == 1 {
-        return sportsAV[row]
+        return String(sportsAV[row])
         } else {
         return String(arrPrices[row])
         }
