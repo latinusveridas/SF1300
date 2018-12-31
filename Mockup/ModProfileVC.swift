@@ -16,6 +16,7 @@ class ModProfileVC : ViewController {
     @IBOutlet weak var emailAddress: UITextField!
     
     var imagePicker = UIImagePickerController()
+    var userData: [String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
