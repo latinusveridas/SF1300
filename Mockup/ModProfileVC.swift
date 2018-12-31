@@ -63,16 +63,12 @@ func collectUserData(completion: @escaping (Bool) -> ()) {
         .responseJSON { response in
             
             print(response)
-            
-            switch response.result {
-                
+            switch response.result {          
             case .success:
                 
                 guard response.result.isSuccess else {return completion(false)}
                 guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
-                
-                print(rawInventory)
-                
+
                 var successStatus = rawInventory!["success"] as! Int
                 
                 if successStatus == 1 {
