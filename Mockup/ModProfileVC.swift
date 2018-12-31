@@ -81,4 +81,21 @@ func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ())
             }   // switch
     } //request
     
-} //function collectUserData
+} //end of function collectUserData
+
+func collectProfilePicture(userID: String) {
+    let firstPartURL = "http://83.217.132.102:3000/"
+    var organizer_profile_picture = userID.replacingOccurrences(of: "_O_", with: "_OPP_")
+    organizer_profile_picture = organizer_profile_picture + ".jpg"
+    let imageURL = firstPartURL + organizer_profile_picture
+    print(imageURL)
+    
+	//AlamofireImage request
+	Alamofire.request(imageURL).responseImage(completionHandler: {response in
+		if let image = response.result.value {
+			DispatchQueue.main.async {
+			cell.UIImage_OPP?.image = image
+			}
+		}
+	})       
+} // end of func collecProfilePicture
