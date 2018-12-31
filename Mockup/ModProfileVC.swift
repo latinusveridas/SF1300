@@ -46,7 +46,7 @@ extension ImageCropVC: UIImagePickerControllerDelegate, UINavigationControllerDe
 
 // ===================================== FUNCTIONS =====================================
 
-func collectUserData(completion: @escaping (Bool) -> ()) {
+func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ()) {
     // This function collect userData in an Dictionnary
     
     let SFTokenHandler = StreetFitTokenHandler()
@@ -56,7 +56,8 @@ func collectUserData(completion: @escaping (Bool) -> ()) {
     let urlString = "http://83.217.132.102:3000/auth/experlogin/xxxx"
     
     let headers: HTTPHeaders = [
-        "Content-Type" : "application/json; charset=UTF-8"
+        "Content-Type" : "application/json; charset=UTF-8",
+        "user_id" : userId
     ]
 
     sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
@@ -71,9 +72,9 @@ func collectUserData(completion: @escaping (Bool) -> ()) {
                 var successStatus = rawInventory!["success"] as! Int
                 
                 if successStatus == 1 {
-                    completion(true)
+                    completion(rawInventory)
                 } else {
-                    completion(false)
+                    completion([:])
                 }   
             case .failure(let error):
                 print(error)            
