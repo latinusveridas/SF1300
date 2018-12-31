@@ -84,6 +84,14 @@ func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ())
 } //end of function collectUserData
 
 func collectProfilePicture(userID: String) {
+// This function collect the ProfilePicture thanks to the userID
+	
+let SFTokenHandler = StreetFitTokenHandler()
+let sessionManager = SFTokenHandler.sessionManager
+sessionManager.adapter = SFTokenHandler
+sessionManager.retrier = SFTokenHandler
+let urlString = "http://83.217.132.102:3000/auth/experlogin/xxxx"
+	
     let firstPartURL = "http://83.217.132.102:3000/"
     var organizer_profile_picture = userID.replacingOccurrences(of: "_O_", with: "_OPP_")
     organizer_profile_picture = organizer_profile_picture + ".jpg"
