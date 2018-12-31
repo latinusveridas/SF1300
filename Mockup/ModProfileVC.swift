@@ -12,6 +12,8 @@ import UIKit
 class ModProfileVC : ViewController {
     
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var updateProfilePicture: UIButton!
+    @IBOutlet weak var emailAddress: UITextField!
     
     var imagePicker = UIImagePickerController()
     
