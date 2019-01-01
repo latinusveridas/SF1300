@@ -40,7 +40,7 @@ class CreateEventVC: UIViewController {
      // Collect the available sports
     CollectAvailableSports() { result in
     self.sportsAV = result
-    self.SportPicker.reloadAllComponents()
+    //self.SportPicker.reloadAllComponents()
     }
     
     // Delegation of the ViewPickers
@@ -259,10 +259,12 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if pickerView.tag == 1 {
+        if pickerView == SportPicker {
         return String(sportsAV[row])
-        } else {
+        } else if pickerView == pricePicker {
         return String(arrPrices[row])
+        } else {
+            return ""
         }
         
     }

@@ -6,10 +6,14 @@
 //  Copyright © 2018 Quentin. All rights reserved.
 //
 
+/*
+
 import Foundation
 import UIKit
+import Alamofire
+import AlamofireImage
 
-class ModProfileVC : ViewController {
+class ModProfileVC : UIViewController {
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var updateProfilePicture: UIButton!
@@ -34,8 +38,10 @@ class ModProfileVC : ViewController {
 
 // ===================================== EXTENSION ============================================
 
-extension ImageCropVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ModProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             img.image = image
             
@@ -60,7 +66,7 @@ func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ())
         "user_id" : userId
     ]
 
-    sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
+    sessionManager.request(urlString, method: .post, encoding: JSONEncoding.default, headers: headers)
         .validate()
         .responseJSON { response in
             print(response)
@@ -79,11 +85,12 @@ func collectUserData(userId: String, completion: @escaping ([String:Any]) -> ())
             case .failure(let error):
                 print(error)            
             }   // switch
+            
     } //request
     
 } //end of function collectUserData
 
-func collectProfilePicture(userID: String)-> UIimage {
+func collectProfilePicture(userID: String) -> UIImage {
 // This function collect the ProfilePicture thanks to the userID
 	
 	let SFTokenHandler = StreetFitTokenHandler()
@@ -98,12 +105,15 @@ func collectProfilePicture(userID: String)-> UIimage {
     print(imageURL)
     
 	//AlamofireImage request
-	sessionManager.request(imageURL).responseImage(completionHandler: { response in
+	sessionManager.request(imageURL).responseImage (completionHandler: { response in
 		if let image = response.result.value {
 			DispatchQueue.main.async {
-			completionHandler()
+			completionHandler(image)
 			}
 		}
 	})       
 	
 } // end of func collecProfilePicture
+
+
+*/
