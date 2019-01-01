@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Alamofire
 
+
+
 class CreateEventVC: UIViewController {
     
     @IBOutlet weak var DatePicked: UILabel!
@@ -21,18 +23,14 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
     @IBOutlet weak var OrgID: UILabel!
-    
-    var sportsAV: [String] = []
+
     var pricePicker: UIPickerView = UIPickerView()
     let arrPrices = [5,10,15,20,25,30,35,40,45,50]
+    var sportsAV: [String] = []
     
     override func viewDidLoad() {
     super.viewDidLoad()
     self.HideKeyboard()
-        
-    //Tagging SportPicker as 1, PricePicker as 2
-    SportPicker.tag == 1
-    pricePicker.tag == 2
         
     // Add an event to call onDidChangeDate function when value is changed.
     DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
@@ -40,23 +38,21 @@ class CreateEventVC: UIViewController {
      // Collect the available sports
     CollectAvailableSports() { result in
     self.sportsAV = result
-    //self.SportPicker.reloadAllComponents()
-    }
-    
+    self.SportPicker.reloadAllComponents()
     // Delegation of the ViewPickers
-    SportPicker.delegate = self
-    SportPicker.dataSource = self
-    pricePicker.dataSource = self
-    pricePicker.delegate = self
+        print(self.sportsAV)
+        print(self.sportsAV.count)
+        self.SportPicker.delegate = self
+        self.SportPicker.dataSource = self
+        self.pricePicker.dataSource = self
+        self.pricePicker.delegate = self
+        }
     
     priceField.inputView = pricePicker
         
     OrgID.text = UserDefaults.standard.string(forKey: "organizerID")
         
-
         
-   
-    
     } // end of viewdidload
     
     
@@ -239,33 +235,38 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        if pickerView.tag == 1 {
+        if pickerView == SportPicker {
             return sportsAV.count
         } else {
+            if pickerView == pricePicker {
             return arrPrices.count
         }
-        
+            else {return 0}
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if pickerView.tag == 1 {
+        if pickerView == SportPicker {
         sportselected.text = sportsAV[row]
         } else {
+            if pickerView == pricePicker {
         priceField.text = String(arrPrices[row])
         }
-        
+            else {}
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if pickerView == SportPicker {
-        return String(sportsAV[row])
+            return String(sportsAV[row])
         } else if pickerView == pricePicker {
         return String(arrPrices[row])
         } else {
             return ""
         }
+        
         
     }
 

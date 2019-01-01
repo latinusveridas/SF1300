@@ -88,13 +88,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventCreation.swift"
-            timestampString = "568064118.836781"
+            timestampString = "568068185.983938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -104,12 +104,12 @@
                   moduleName = "Mockup"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
-                  timestampString = "567066124.177892"
+                  timestampString = "568064994.036606"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "635">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "419">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -119,12 +119,12 @@
                   moduleName = "Mockup"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventCreation.swift"
-                  timestampString = "567066124.179564"
+                  timestampString = "568064994.0386111"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "34">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -136,13 +136,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventCreation.swift"
-            timestampString = "568064118.837303"
+            timestampString = "568068185.9839979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "CreateEventVC"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
