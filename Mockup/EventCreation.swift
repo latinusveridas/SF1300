@@ -223,6 +223,17 @@ func isUploaded(eventData: [String:String?], completion: @escaping (Bool) -> ())
 }
 
 
+func isTxtFldVoid(txtFld : UITextField) -> Bool {
+// This function test if the text field is nil to avoid to send nil data to the server
+    
+    if txtFld.text! == nil {
+    return true
+    } else {
+    return false
+    }
+
+}
+
 // ====================== EXTENSIONS ==============================
 
 extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
