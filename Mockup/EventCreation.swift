@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import ARSLineProgress
 
 class CreateEventVC: UIViewController {
     
@@ -55,6 +56,8 @@ class CreateEventVC: UIViewController {
     @IBAction func Action_CreateEvent(_ sender: Any) {
         // This action create the payload and send it to the server
         
+        ARSLineProgress.showWithProgress(initialValue: 1.00)
+        
         //Prepare the data
         let data = PrepareData()
             
@@ -62,7 +65,7 @@ class CreateEventVC: UIViewController {
             
             if response == true {
                 print("in true isUploaded")
-                let alertController = UIAlertController(title: "StreetFit", message: "Votre évenement à bien été créé !", preferredStyle: UIAlertController.Style.alert)
+               let alertController = UIAlertController(title: "StreetFit", message: "Votre évenement à bien été créé !", preferredStyle: UIAlertController.Style.alert)
                 let showNextController = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in
                     
                     self.dismiss(animated: true, completion: nil)
@@ -71,6 +74,7 @@ class CreateEventVC: UIViewController {
                 alertController.addAction(showNextController)
                 self.present(alertController,animated: true,completion: nil)
 
+                //ARSLineProgress.showWithProgress(initialValue: 100.00)
                 
             } else {
                 
