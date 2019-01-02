@@ -20,11 +20,12 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var CreateEventButton: UIButton!
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
-    @IBOutlet weak var OrgID: UILabel!
+
 
     var pricePicker: UIPickerView = UIPickerView()
     let arrPrices = [5,10,15,20,25,30,35,40,45,50]
     var sportsAV: [String] = []
+    let orgID = UserDefaults.standard.string(forKey: "organizerID")!
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -47,9 +48,6 @@ class CreateEventVC: UIViewController {
         }
     
     priceField.inputView = pricePicker
-        
-    OrgID.text = UserDefaults.standard.string(forKey: "organizerID")
-        
         
     } // end of viewdidload
     
@@ -84,6 +82,11 @@ class CreateEventVC: UIViewController {
         }
         
     }
+    
+    @IBAction func CloseView(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 // =================== CLASS HELPER FUNCTIONS =================================
     
@@ -121,7 +124,7 @@ class CreateEventVC: UIViewController {
         "sport" : sportselected.text!,
         "price" : priceField.text!,
         "part_max" : ParticipantField.text!,
-        "organizer_id": OrgID.text!
+        "organizer_id": orgID
         ]
         
         print("Date prepared by PrepareData function is ", modDate)

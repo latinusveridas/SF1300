@@ -25,6 +25,7 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HideKeyboard()  
         
         // Configuration des textbox
         let textFields = [self.SurnameField,
