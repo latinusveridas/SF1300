@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import Alamofire
 
-
-
 class CreateEventVC: UIViewController {
     
     @IBOutlet weak var DatePicked: UILabel!
@@ -61,8 +59,7 @@ class CreateEventVC: UIViewController {
         
         //Prepare the data
         let data = PrepareData()
-        
-        
+            
         isUploaded(eventData: data){ response in
             
             if response == true {
@@ -114,7 +111,7 @@ class CreateEventVC: UIViewController {
         let dateFormatter = DateFormatter()
         //dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         print(DatePicked.text!)
-        let modDate = DatePicked.text! + ":00"
+        let modDate: String = DatePicked.text! + ":00"
         
         let dataLoad: [String:String]
         
@@ -126,7 +123,8 @@ class CreateEventVC: UIViewController {
         "part_max" : ParticipantField.text!,
         "organizer_id": OrgID.text!
         ]
-                
+        
+        print("Date prepared by PrepareData function is ", modDate)
         print("PREPARE DATA", dataLoad.description)
         return dataLoad
     
