@@ -2,20 +2,24 @@ PODS:
   - Alamofire (4.8.0)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - ARSLineProgress (3.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - ARSLineProgress
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - ARSLineProgress
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
 
-PODFILE CHECKSUM: 5bcf97afa7849e0e3774a7a3c0f5967ea5841d05
+PODFILE CHECKSUM: ba3d82998cc2620bf1d8c1d505465fea00beaeed
 
 COCOAPODS: 1.5.3

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D7F573A8EFF634301F2E87212142F021"
-               BlueprintName = "Pods-Mockup"
+               BlueprintIdentifier = "63B42CAC702451B2FC02B87D6917B653"
+               BlueprintName = "ARSLineProgress"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Mockup.a">
+               BuildableName = "libARSLineProgress.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
