@@ -225,7 +225,17 @@ public class eventClass {
 }
 
 
+// ========================== HELPERS ==================================
 
+func sportLabelConverter(strSport: String) {
+// This function collect the name of the sport and convert it to a name of the image stored in the application
+// Ex : Cross-Fit --> crossfit
+    
+    //We delete the cap : 
+    
+    
+
+}
 
 
 
