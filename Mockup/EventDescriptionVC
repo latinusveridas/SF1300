@@ -48,7 +48,7 @@ class EventDescriptionVC: UIViewController {
     
 }
 
-func setupLocationManager() {
+    func setupLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -95,10 +95,10 @@ func setupLocationManager() {
     }
 
 
-}
+} // end of EventDescriptionVC class
 
 
-extension EventDescriptionController: CLLocationManagerDelegate {
+extension EventDescriptionVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -115,4 +115,4 @@ extension EventDescriptionController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
-}
+} // end of Extension
