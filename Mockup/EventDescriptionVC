@@ -1,0 +1,20 @@
+//
+//  EventDescriptionVC.swift
+//  Mockup
+//
+//  Created by Quentin Duquesne on 18/12/2018.
+//  Copyright © 2018 Quentin Duquesne. All rights reserved.
+//
+import Foundation
+import UIKit
+import Alamofire
+import ARSLineProgress
+
+class EventDescriptionVC: UIViewController {
+
+
+
+
+
+
+}
