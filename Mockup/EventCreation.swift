@@ -105,9 +105,16 @@ class CreateEventVC: UIViewController {
 
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
+        
+
+        let english       = DateFormatter()
+        english.dateStyle = .medium
+        english.timeStyle = .medium
+        english.locale    = Locale(identifier: "EN-en")
+        print(english.string(from: selectedDate)) // Jan 20, 2017, 10:29:51 PM
 
         print("Selected value \(selectedDate)")
-        DatePicked.text = selectedDate
+        DatePicked.text = english.string(from: selectedDate)
         
     }
     
