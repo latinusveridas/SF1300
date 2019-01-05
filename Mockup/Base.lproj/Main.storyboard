@@ -558,6 +558,7 @@
                                             <outlet property="ParticipationProgressBar" destination="ID3-HZ-6Xy" id="Tvb-9c-26p"/>
                                             <outlet property="UIImage_OPP" destination="nqo-Ma-MuA" id="gY7-ZD-apb"/>
                                             <outlet property="UIImage_Sport" destination="Eeh-58-EpM" id="kde-hi-fPz"/>
+                                            <outlet property="labelDate" destination="rAs-XI-eeB" id="rRw-r2-LE5"/>
                                             <outlet property="labelFirstName" destination="VMz-Fe-Jmu" id="drA-4Y-AYG"/>
                                             <outlet property="labelLocation" destination="Xkz-ce-dpk" id="Skq-w1-0Ba"/>
                                             <outlet property="labelPart_max" destination="Klr-pG-F47" id="luc-MO-DyD"/>

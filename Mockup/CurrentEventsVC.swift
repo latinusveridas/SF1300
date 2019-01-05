@@ -80,7 +80,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! eventUICell
         //cell.labelEvent_id.text = eventsList[indexPath.row].event_id
-        //cell.labelDate.text = eventsList[indexPath.row].date
+        cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.row].date)
+        
         cell.labelLocation.text = eventsList[indexPath.row].location
         cell.labelSport.text = eventsList[indexPath.row].sport
         cell.labelFirstName.text = eventsList[indexPath.row].first_name
@@ -173,7 +174,7 @@ extension CurrentEventsVC {
 class eventUICell: UITableViewCell {
     
     //@IBOutlet weak var labelEvent_id: UILabel!
-    //@IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelLocation: UILabel!
     @IBOutlet weak var labelSport: UILabel!
     @IBOutlet weak var labelSubscribed: UILabel!
@@ -235,6 +236,25 @@ func sportLabelConverter(strSport: String) -> String {
     let low = strSport.lowercased()
     return low
    
+}
+
+func formatDate(strDate: String) -> String {
+    // Objective : return a string type "Mardi 25 Janvier 2019 17:00"
+    
+    //MySQL format to acceptable format
+    print("STR DATE IS ",strDate)
+    let dteFormatter = DateFormatter()
+    dteFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    let cleanedDate = dteFormatter.date(from: strDate)
+    
+    let frenchDateFormatter = DateFormatter()
+    frenchDateFormatter.dateStyle = .long
+    frenchDateFormatter.timeStyle = .short
+    frenchDateFormatter.locale = Locale(identifier: "fr_FR")
+    let strDate = frenchDateFormatter.string(from: cleanedDate!)
+    
+    return strDate
+    
 }
 
 
