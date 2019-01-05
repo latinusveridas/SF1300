@@ -13,9 +13,10 @@ import AlamofireImage
 
 class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // ============================== VARIABLES ===============================
+    @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+        // ============================== VARIABLES ===============================
     // When data is received, it's filled in eventsList
     var eventsList: [eventClass] = []
     let refreshControl = UIRefreshControl()
@@ -28,6 +29,14 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
+        ProfileButton.titleLabel!.text = ""
+        ProfileButton.frame = CGRect(x: 8.00, y: 82.00, width: 40.00, height: 40.00)
+        if let imageB  = UIImage(named: "coach profile picture") {
+            ProfileButton.setBackgroundImage(imageB, for: .normal)
+            
+        }
+        ProfileButton.addTarget(self, action: #selector(self.buttonClicked), for: UIControl.Event.touchUpInside)
+        
         
         let SFTokenHandler = StreetFitTokenHandler()
         let sessionManager = SFTokenHandler.sessionManager
@@ -257,5 +266,18 @@ func formatDate(strDate: String) -> String {
     
 }
 
+// ========================= EXTENSIONS ================================
+
+extension CurrentEventsVC {
+    
+    @objc func buttonClicked() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileVC")
+        self.present(newViewController,animated: true,completion: nil)
+        
+    }
+
+}
 
 
