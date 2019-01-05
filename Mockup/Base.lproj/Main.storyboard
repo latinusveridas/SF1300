@@ -637,10 +637,10 @@
             </objects>
             <point key="canvasLocation" x="797.60000000000002" y="48.768472906403943"/>
         </scene>
-        <!--Event DescriptionVC-->
+        <!--Event DetailsVC-->
         <scene sceneID="Pki-ny-XkJ">
             <objects>
-                <viewController id="hZ5-yY-kF4" customClass="EventDescriptionVC" customModule="Mockup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailsVC" id="hZ5-yY-kF4" customClass="EventDetailsVC" customModule="Mockup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R75-OT-aLM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

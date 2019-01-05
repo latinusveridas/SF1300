@@ -13,7 +13,7 @@ import Alamofire
 import ARSLineProgress
 import CoreLocation
 
-class EventDescriptionVC: UIViewController {
+class EventDetailsVC: UIViewController {
 
     @IBOutlet weak var DescriptionMap: MKMapView!
     
@@ -27,16 +27,16 @@ class EventDescriptionVC: UIViewController {
     var LongitudeData: String?
     var eventLocation: CLLocationCoordinate2D?
     
-    @IBOutlet weak var LocationLabel: UILabel!
-    @IBOutlet weak var LatitudeLabel: UILabel!
-    @IBOutlet weak var LongitudeLabel: UILabel!
+    //@IBOutlet weak var LocationLabel: UILabel!
+    //@IBOutlet weak var LatitudeLabel: UILabel!
+    //@IBOutlet weak var LongitudeLabel: UILabel!
     
  override func viewDidLoad() {
     super.viewDidLoad()
     
-    LocationLabel.text = LocationData
-    LatitudeLabel.text = LatitudeData
-    LongitudeLabel.text = LongitudeData
+    //LocationLabel.text = LocationData
+    //LatitudeLabel.text = LatitudeData
+    //LongitudeLabel.text = LongitudeData
 
     let eventLocation = CLLocationCoordinate2D(latitude: Double(LatitudeData!)!, longitude: Double(LongitudeData!)!)
 
@@ -109,7 +109,7 @@ class EventDescriptionVC: UIViewController {
 } // end of EventDescriptionVC class
 
 
-extension EventDescriptionVC: CLLocationManagerDelegate {
+extension EventDetailsVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

@@ -47,7 +47,6 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             guard eventsList != nil else {return}
             self.eventsList = eventsList!
             self.tableView.reloadData()
-            
         }
         
         
@@ -59,8 +58,6 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         } else {
             self.tableView.addSubview(refreshControl)
         }
-        
-        
         
         
     } // End of ViewDidLoad
@@ -141,13 +138,15 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     // Evenement en cas de selection d'une ligne
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detail: EventViewVC
-        detail = self.storyboard?.instantiateViewController(withIdentifier: "EventViewVC") as! EventViewVC
-        self.navigationController?.pushViewController(detail, animated: true)
+       
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "EventDetailsVC") as! EventDetailsVC
         
-        detail.LocationData = eventsList[indexPath.row].location
-        detail.LatitudeData = eventsList[indexPath.row].latitude!
-        detail.LongitudeData = eventsList[indexPath.row].longitude!
+        newViewController.LocationData = eventsList[indexPath.row].location
+        newViewController.LatitudeData = eventsList[indexPath.row].latitude!
+        newViewController.LongitudeData = eventsList[indexPath.row].longitude!
+        
+        self.present(newViewController,animated: true,completion: nil)
         
     }
     
