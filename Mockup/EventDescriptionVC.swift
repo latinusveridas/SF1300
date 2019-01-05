@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 import Alamofire
 import ARSLineProgress
 import CoreLocation
@@ -60,7 +61,7 @@ class EventDescriptionVC: UIViewController {
     func centerViewOnUserLocation() {
         
        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegionMakeWithDistance(location, regionInMeters, regionInMeters)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             DescriptionMap.setRegion(region, animated: true)
         }
         
@@ -117,7 +118,7 @@ extension EventDescriptionVC: CLLocationManagerDelegate {
         DescriptionMap.setRegion(region, animated: true) */
         
         let eventLocation = CLLocationCoordinate2D(latitude: Double(LatitudeData!)!, longitude: Double(LongitudeData!)!)
-        let region = MKCoordinateRegionMakeWithDistance(eventLocation, regionInMeters, regionInMeters)
+        let region = MKCoordinateRegion(center: eventLocation, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         DescriptionMap.setRegion(region, animated: true)
     }
     
