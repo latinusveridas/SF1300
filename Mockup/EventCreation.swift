@@ -22,7 +22,6 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
 
-
     var pricePicker: UIPickerView = UIPickerView()
     let arrPrices = [5,10,15,20,25,30,35,40,45,50]
     var sportsAV: [String] = []
@@ -56,7 +55,7 @@ class CreateEventVC: UIViewController {
     @IBAction func Action_CreateEvent(_ sender: Any) {
         // This action create the payload and send it to the server
         
-        ARSLineProgress.showWithProgress(initialValue: 1.00)
+        //ARSLineProgress.showWithProgress(initialValue: 1.00)
         
         //Prepare the data
         let data = PrepareData()
@@ -65,7 +64,7 @@ class CreateEventVC: UIViewController {
             
             if response == true {
                 print("in true isUploaded")
-               let alertController = UIAlertController(title: "StreetFit", message: "Votre évenement à bien été créé !", preferredStyle: UIAlertController.Style.alert)
+               let alertController = UIAlertController(title: "StreetFit", message: "Votre évenement a bien été créé !", preferredStyle: UIAlertController.Style.alert)
                 let showNextController = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in
                     
                     self.dismiss(animated: true, completion: nil)
@@ -97,24 +96,35 @@ class CreateEventVC: UIViewController {
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
 
-        // Create date formatter
-        let dateFormatter: DateFormatter = DateFormatter()
-
-        // Set date format
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-
-        // Apply date format
-        let selectedDate: String = dateFormatter.string(from: sender.date)
+        DatePicked.text = dateEventToLocal(trgetDate: sender.date)
         
-
-        let english       = DateFormatter()
-        english.dateStyle = .medium
-        english.timeStyle = .medium
-        english.locale    = Locale(identifier: "EN-en")
-        print(english.string(from: selectedDate)) // Jan 20, 2017, 10:29:51 PM
-
-        print("Selected value \(selectedDate)")
-        DatePicked.text = english.string(from: selectedDate)
+    }
+    
+    func dateEventToLocal(trgetDate: Date) -> String {
+        
+        let localTimeZoneID = TimeZone.current.localizedName(for: .shortStandard, locale: .current) ?? ""
+        print(localTimeZoneID)
+        let dateFormatWithoutSeconds = DateFormatter()
+        dateFormatWithoutSeconds.dateFormat = "yyyy-MM-dd HH:mm" // Delete of seconds
+        dateFormatWithoutSeconds.timeZone = TimeZone(identifier: localTimeZoneID)
+        
+        let strDateWithoutSeconds: String = dateFormatWithoutSeconds.string(from: trgetDate) + ":00"
+        print("String local", strDateWithoutSeconds)
+        
+        return strDateWithoutSeconds
+        
+    }
+    
+    func dateEventToUTC(trgetDate: Date) -> String {
+        
+        let newFormat = DateFormatter()
+        newFormat.dateFormat = "yyyy-MM-dd HH:mm" // Delete of seconds
+        newFormat.timeZone = TimeZone(identifier: "UTC")
+        
+        let utcString: String = newFormat.string(from: trgetDate) + ":00"
+        print("String UTC ", utcString)
+        
+        return utcString
         
     }
     
