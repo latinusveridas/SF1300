@@ -26,30 +26,36 @@ class EventDetailsVC: UIViewController {
     var LatitudeData: String?
     var LongitudeData: String?
     var eventLocation: CLLocationCoordinate2D?
+    var eventBaseInfo: [String:Any] = [:]
     
-    //@IBOutlet weak var LocationLabel: UILabel!
-    //@IBOutlet weak var LatitudeLabel: UILabel!
-    //@IBOutlet weak var LongitudeLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
+
     
  override func viewDidLoad() {
     super.viewDidLoad()
-    
-    //LocationLabel.text = LocationData
-    //LatitudeLabel.text = LatitudeData
-    //LongitudeLabel.text = LongitudeData
 
     let eventLocation = CLLocationCoordinate2D(latitude: Double(LatitudeData!)!, longitude: Double(LongitudeData!)!)
 
     checkLocationServices()
 
     // Artwork
-    let artwork = Artwork(title: "MyEvent",
+    let artwork = Artwork(title: eventBaseInfo["sport"] as! String,
                           locationName: "Location of the event",
                           discipline: "Sculpture",
                           coordinate: eventLocation)
     DescriptionMap.addAnnotation(artwork)
     
-}
+    print(eventBaseInfo)
+    
+} // end of view load
+    
+    
+    
+    @IBAction func Action_CloseVC(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     func setupLocationManager() {
     

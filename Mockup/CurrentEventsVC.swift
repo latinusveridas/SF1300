@@ -85,15 +85,11 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! eventUICell
-        //cell.labelEvent_id.text = eventsList[indexPath.row].event_id
         cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.row].date)
-        
         cell.labelLocation.text = eventsList[indexPath.row].location
         cell.labelSport.text = eventsList[indexPath.row].sport
         cell.labelFirstName.text = eventsList[indexPath.row].first_name
-        //cell.labelLatitude.text = eventsList[indexPath.row].latitude
-        //cell.labelLongitude.text = eventsList[indexPath.row].longitude
-        
+
         // Not string data converted to String
         cell.labelSubscribed.text = "\(eventsList[indexPath.row].nb_part_sub)"
         cell.labelPart_max.text = "\(eventsList[indexPath.row].nb_part_max)"
@@ -101,8 +97,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.UIImage_Sport.image = UIImage(named: sportLabelConverter(strSport: eventsList[indexPath.row].sport)) // We use helper sportLabelConverter to convert the name
         
-        var intPartMax = Float(eventsList[indexPath.row].nb_part_max)
-        var intSub = Float(eventsList[indexPath.row].nb_part_sub)
+        let intPartMax = Float(eventsList[indexPath.row].nb_part_max)
+        let intSub = Float(eventsList[indexPath.row].nb_part_sub)
         
         cell.ParticipationProgressBar.progress = intSub/intPartMax
         
@@ -142,6 +138,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "EventDetailsVC") as! EventDetailsVC
         
+        newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.row])
         newViewController.LocationData = eventsList[indexPath.row].location
         newViewController.LatitudeData = eventsList[indexPath.row].latitude!
         newViewController.LongitudeData = eventsList[indexPath.row].longitude!
@@ -265,6 +262,27 @@ func formatDate(strDate: String) -> String {
     
 }
 
+
+func copyEventData(selectedEvent: eventClass) -> [String:Any] {
+    
+    var dataDict: [String:Any] = [:]
+    
+     dataDict["event_id"] = selectedEvent.event_id
+     dataDict["date"] = selectedEvent.date
+     dataDict["location"] = selectedEvent.location
+     dataDict["sport"] = selectedEvent.sport
+     dataDict["nb_part_sub"] = selectedEvent.nb_part_sub
+     dataDict["nb_part_max"] = selectedEvent.nb_part_max
+     dataDict["price_per_part"] = selectedEvent.price_per_part
+     dataDict["organizer_id"] = selectedEvent.organizer_id
+     dataDict["first_name"] = selectedEvent.first_name
+     dataDict["latitude"] = selectedEvent.latitude
+     dataDict["longitude"] = selectedEvent.longitude
+    
+    return dataDict
+
+}
+
 // ========================= EXTENSIONS ================================
 
 extension CurrentEventsVC {
@@ -278,5 +296,4 @@ extension CurrentEventsVC {
     }
 
 }
-
 
