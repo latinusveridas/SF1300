@@ -13,7 +13,7 @@ import ARSLineProgress
 
 class CreateEventVC: UIViewController {
     
-    @IBOutlet weak var DatePicked: UILabel!
+
     @IBOutlet weak var Adress: UITextField!
     @IBOutlet weak var sportselected: UILabel!
     @IBOutlet weak var priceField: UITextField!
@@ -21,9 +21,13 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var CreateEventButton: UIButton!
     @IBOutlet weak var DatePicker: UIDatePicker!
     @IBOutlet weak var SportPicker: UIPickerView!
-
+    @IBOutlet weak var newDateField: UITextField!
+    
     var pricePicker: UIPickerView = UIPickerView()
+    var newDatePicker: UIDatePicker = UIDatePicker()
+    var partPicker: UIPickerView = UIPickerView()
     let arrPrices = [5,10,15,20,25,30,35,40,45,50]
+    let arrParticipants = Array(1...100)
     var sportsAV: [String] = []
     let orgID = UserDefaults.standard.string(forKey: "organizerID")!
     
@@ -32,7 +36,7 @@ class CreateEventVC: UIViewController {
     self.HideKeyboard()
         
     // Add an event to call onDidChangeDate function when value is changed.
-    DatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+    newDatePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
 
      // Collect the available sports
     CollectAvailableSports() { result in
@@ -45,9 +49,13 @@ class CreateEventVC: UIViewController {
         self.SportPicker.dataSource = self
         self.pricePicker.dataSource = self
         self.pricePicker.delegate = self
+        self.partPicker.delegate = self
+        self.partPicker.dataSource = self
         }
     
     priceField.inputView = pricePicker
+    newDateField.inputView = newDatePicker
+    ParticipantField.inputView = partPicker
         
     } // end of viewdidload
     
@@ -96,7 +104,7 @@ class CreateEventVC: UIViewController {
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
 
-        DatePicked.text = dateEventToLocal(trgetDate: sender.date)
+        newDateField.text = dateEventToLocal(trgetDate: sender.date)
         
     }
     
@@ -134,8 +142,8 @@ class CreateEventVC: UIViewController {
         // on ajoute les secondes pour etre au format dd/MM/yyyy HH:mm:SS
         let dateFormatter = DateFormatter()
         //dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        print(DatePicked.text!)
-        let modDate: String = DatePicked.text! + ":00"
+        print(newDateField.text!)
+        let modDate: String = newDateField.text! + ":00"
         
         let dataLoad: [String:String]
         
@@ -271,10 +279,21 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView == SportPicker {
             return sportsAV.count
         } else {
-            if pickerView == pricePicker {
-            return arrPrices.count
+            
+        if pickerView == pricePicker {
+        return arrPrices.count
+        } else {
+
+        if pickerView == partPicker {
+            return arrParticipants.count
         }
-            else {return 0}
+
+        else {
+            
+        return 0
+            
+        }
+        }
         }
     }
     
@@ -283,10 +302,17 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
         if pickerView == SportPicker {
         sportselected.text = sportsAV[row]
         } else {
-            if pickerView == pricePicker {
+            
+        if pickerView == pricePicker {
         priceField.text = String(arrPrices[row])
+        } else {
+            
+        if pickerView == partPicker {
+        ParticipantField.text = String(arrParticipants[row])
+        } else {
+            
         }
-            else {}
+        }
         }
     }
     
@@ -294,13 +320,48 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
         
         if pickerView == SportPicker {
             return String(sportsAV[row])
-        } else if pickerView == pricePicker {
+        } else {
+        
+        if pickerView == pricePicker {
         return String(arrPrices[row])
         } else {
-            return ""
+            
+        if pickerView == partPicker {
+        return String(arrParticipants[row])
+        }
+            
+        return ""
+            
+        }
+            
         }
         
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
+        if pickerView == SportPicker {
+        let attributedString = NSAttributedString(string: sportsAV[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return attributedString
+        } else {
+
+        if pickerView == pricePicker {
+        let attributedString = NSAttributedString(string: String(arrPrices[row]), attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+        return attributedString
+        } else {
+                
+        if pickerView == partPicker {
+        let attributedString = NSAttributedString(string: String(arrParticipants[row]), attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+        return attributedString
+
+        } else {
+
+            return NSAttributedString(string: "")
+
+        }
+        }
+        }
     }
 
 }
+
