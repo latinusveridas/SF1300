@@ -9,8 +9,11 @@ import MapKit
     String language;
 }; */
 
-let optionsLookup: GeocoderReverseLookupOptions 
+let optionsLookup: GeocoderReverseLookupOptions = [:]
 optionsLookup.language = "FR-fr"
 
 // Create Object
 let geoCoder = new mapkit.Geocoder(optional GeocoderConstructorOptions options);
+geoCoder = geoCoder(optionsLookup)
+
+
