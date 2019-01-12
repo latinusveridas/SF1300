@@ -12,6 +12,7 @@
 		001DC83821C98D1000A78AFE /* EventCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DC83721C98D1000A78AFE /* EventCreationVC.swift */; };
 		0022A2B521E0C625004E6A08 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022A2B421E0C625004E6A08 /* ProfileVC.swift */; };
 		0027349421C53BC800AC5A76 /* steelfish rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0027349321C53BA900AC5A76 /* steelfish rg.ttf */; };
+		002A8EBB21EA5E1700C9E4A2 /* NotificationsManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */; };
 		0031A93721E100290038F59F /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031A93621E100290038F59F /* EventDetailsVC.swift */; };
 		0031A93921E126180038F59F /* MapKitArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031A93821E126180038F59F /* MapKitArtwork.swift */; };
 		003B131021C54DEA0024092F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B130F21C54DEA0024092F /* RegisterVC.swift */; };
@@ -51,6 +52,7 @@
 		001DC83721C98D1000A78AFE /* EventCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationVC.swift; sourceTree = "<group>"; };
 		0022A2B421E0C625004E6A08 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0027349321C53BA900AC5A76 /* steelfish rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "steelfish rg.ttf"; sourceTree = "<group>"; };
+		002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManagement.swift; sourceTree = "<group>"; };
 		0031A93621E100290038F59F /* EventDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
 		0031A93821E126180038F59F /* MapKitArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitArtwork.swift; sourceTree = "<group>"; };
 		003B130F21C54DEA0024092F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				0017AAFC21D8EFB300970162 /* General Helpers.swift */,
 				0031A93821E126180038F59F /* MapKitArtwork.swift */,
 				00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */,
+				002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */,
 				001AA40821BBC77500931D75 /* Assets.xcassets */,
 				0027349221C53BA300AC5A76 /* Fonts */,
 			);
@@ -353,6 +356,7 @@
 				00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */,
 				003B131021C54DEA0024092F /* RegisterVC.swift in Sources */,
 				0061D0AE21DC09A100425D41 /* ModProfileVC.swift in Sources */,
+				002A8EBB21EA5E1700C9E4A2 /* NotificationsManagement.swift in Sources */,
 				0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */,
 				0031A93921E126180038F59F /* MapKitArtwork.swift in Sources */,
 				00C6219C21B5CA9F00BB0CB1 /* LoginVC.swift in Sources */,

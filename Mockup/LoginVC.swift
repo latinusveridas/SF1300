@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import ARSLineProgress
+import UserNotifications
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -31,6 +32,12 @@ class LoginVC: UIViewController {
         // Hide Keyboard
         
         self.HideKeyboard()
+        
+        // Check Allow Notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         
     }
     
@@ -56,6 +63,7 @@ class LoginVC: UIViewController {
                     
                     // Message de succes
                     ARSLineProgress.showSuccess()
+                    NotifSetup.init().CreateSuccessLoginNotif()
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "IDCurrentEvents")
                     self.present(newViewController,animated: true,completion: nil)
@@ -87,6 +95,11 @@ class LoginVC: UIViewController {
     } // Fin de la fonction ActionLogin
     
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //displaying the ios local notification when app is in foreground
+        completionHandler([.alert, .badge, .sound])
+    }
     
     
 } // Fin de la classe LoginVC

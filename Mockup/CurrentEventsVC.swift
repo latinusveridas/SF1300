@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import Alamofire
 import AlamofireImage
+import UserNotifications
 
-class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -58,6 +59,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         } else {
             self.tableView.addSubview(refreshControl)
         }
+        
+        UNUserNotificationCenter.current().delegate = self
         
         
     } // End of ViewDidLoad
@@ -293,6 +296,12 @@ extension CurrentEventsVC {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "ProfileVC")
         self.present(newViewController,animated: true,completion: nil)
         
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //displaying the ios local notification when app is in foreground
+        completionHandler([.alert, .badge, .sound])
     }
 
 }
