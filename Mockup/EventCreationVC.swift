@@ -341,7 +341,7 @@ extension CreateEventVC : UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         if pickerView == SportPicker {
-        let attributedString = NSAttributedString(string: sportsAV[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        let attributedString = NSAttributedString(string: sportsAV[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
         return attributedString
         } else {
 

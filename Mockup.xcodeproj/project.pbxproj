@@ -24,6 +24,7 @@
 		00C621A421B5CA9F00BB0CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */; };
 		00C621AF21B5CA9F00BB0CB1 /* MockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C621AE21B5CA9F00BB0CB1 /* MockupTests.swift */; };
 		00C621BA21B5CA9F00BB0CB1 /* MockupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C621B921B5CA9F00BB0CB1 /* MockupUITests.swift */; };
+		00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */; };
 		048D55C541D4DC2CB6DECB7F /* libPods-Mockup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A99B485E46E530F5F18903 /* libPods-Mockup.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		00C621B521B5CA9F00BB0CB1 /* MockupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C621B921B5CA9F00BB0CB1 /* MockupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupUITests.swift; sourceTree = "<group>"; };
 		00C621BB21B5CAA000BB0CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5628D72218508F0A6B221476 /* Pods-Mockup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mockup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mockup/Pods-Mockup.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A99B485E46E530F5F18903 /* libPods-Mockup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mockup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E957F205FBB9742BB2ADD035 /* Pods-Mockup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mockup.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mockup/Pods-Mockup.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */,
 				0017AAFC21D8EFB300970162 /* General Helpers.swift */,
 				0031A93821E126180038F59F /* MapKitArtwork.swift */,
+				00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */,
 				001AA40821BBC77500931D75 /* Assets.xcassets */,
 				0027349221C53BA300AC5A76 /* Fonts */,
 			);
@@ -347,6 +350,7 @@
 			files = (
 				0022A2B521E0C625004E6A08 /* ProfileVC.swift in Sources */,
 				0017AAFD21D8EFB300970162 /* General Helpers.swift in Sources */,
+				00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */,
 				003B131021C54DEA0024092F /* RegisterVC.swift in Sources */,
 				0061D0AE21DC09A100425D41 /* ModProfileVC.swift in Sources */,
 				0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */,
