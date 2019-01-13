@@ -19,6 +19,11 @@
 		0044149B21C665830096E5DB /* StreetFitTokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */; };
 		004B97E621EB378100B6B16C /* DepreciatedWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B97E521EB378100B6B16C /* DepreciatedWorks.swift */; };
 		0061D0AE21DC09A100425D41 /* ModProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061D0AD21DC09A100425D41 /* ModProfileVC.swift */; };
+		0080EDAA21EBA0460086876E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080EDA921EBA0460086876E /* MobileCoreServices.framework */; };
+		0080EDAC21EBA04D0086876E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080EDAB21EBA04D0086876E /* CoreMedia.framework */; };
+		0080EDAE21EBA0540086876E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080EDAD21EBA0540086876E /* AudioToolbox.framework */; };
+		0080EDB021EBA0590086876E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080EDAF21EBA0590086876E /* AVFoundation.framework */; };
+		0080EDB221EBA05F0086876E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0080EDB121EBA05F0086876E /* Accelerate.framework */; };
 		0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */; };
 		00C6219A21B5CA9E00BB0CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */; };
 		00C6219C21B5CA9F00BB0CB1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6219B21B5CA9F00BB0CB1 /* LoginVC.swift */; };
@@ -49,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0001ED9D21EB9A09006A99A0 /* Mockup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mockup-Bridging-Header.h"; sourceTree = "<group>"; };
 		0017AAFC21D8EFB300970162 /* General Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Helpers.swift"; sourceTree = "<group>"; };
 		001AA40821BBC77500931D75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		001DC83721C98D1000A78AFE /* EventCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationVC.swift; sourceTree = "<group>"; };
@@ -61,6 +67,12 @@
 		0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetFitTokenHandler.swift; sourceTree = "<group>"; };
 		004B97E521EB378100B6B16C /* DepreciatedWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepreciatedWorks.swift; sourceTree = "<group>"; };
 		0061D0AD21DC09A100425D41 /* ModProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModProfileVC.swift; sourceTree = "<group>"; };
+		0080EDA921EBA0460086876E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0080EDAB21EBA04D0086876E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0080EDAD21EBA0540086876E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0080EDAF21EBA0590086876E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0080EDB121EBA05F0086876E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		0080EDB321EBA0870086876E /* Mockup */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Mockup; sourceTree = "<group>"; };
 		0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventsVC.swift; sourceTree = "<group>"; };
 		00C6219621B5CA9E00BB0CB1 /* Mockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +98,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0080EDB221EBA05F0086876E /* Accelerate.framework in Frameworks */,
+				0080EDB021EBA0590086876E /* AVFoundation.framework in Frameworks */,
+				0080EDAE21EBA0540086876E /* AudioToolbox.framework in Frameworks */,
+				0080EDAC21EBA04D0086876E /* CoreMedia.framework in Frameworks */,
+				0080EDAA21EBA0460086876E /* MobileCoreServices.framework in Frameworks */,
 				048D55C541D4DC2CB6DECB7F /* libPods-Mockup.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +135,7 @@
 		00C6218D21B5CA9E00BB0CB1 = {
 			isa = PBXGroup;
 			children = (
+				0001ED9D21EB9A09006A99A0 /* Mockup-Bridging-Header.h */,
 				00C6219821B5CA9E00BB0CB1 /* Mockup */,
 				00C621AD21B5CA9F00BB0CB1 /* MockupTests */,
 				00C621B821B5CA9F00BB0CB1 /* MockupUITests */,
@@ -150,7 +168,6 @@
 				00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */,
 				00C6219D21B5CA9F00BB0CB1 /* Main.storyboard */,
 				00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */,
-				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
 				00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */,
 				0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */,
 				0017AAFC21D8EFB300970162 /* General Helpers.swift */,
@@ -159,6 +176,7 @@
 				002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */,
 				004B97E521EB378100B6B16C /* DepreciatedWorks.swift */,
 				001AA40821BBC77500931D75 /* Assets.xcassets */,
+				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
 				0027349221C53BA300AC5A76 /* Fonts */,
 			);
 			path = Mockup;
@@ -194,6 +212,12 @@
 		B16E404590704CEA3898DCFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0080EDB321EBA0870086876E /* Mockup */,
+				0080EDB121EBA05F0086876E /* Accelerate.framework */,
+				0080EDAF21EBA0590086876E /* AVFoundation.framework */,
+				0080EDAD21EBA0540086876E /* AudioToolbox.framework */,
+				0080EDAB21EBA04D0086876E /* CoreMedia.framework */,
+				0080EDA921EBA0460086876E /* MobileCoreServices.framework */,
 				A0A99B485E46E530F5F18903 /* libPods-Mockup.a */,
 			);
 			name = Frameworks;
@@ -554,8 +578,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mockup/CardIO",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SF1000.Mockup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mockup-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -573,8 +602,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Mockup/CardIO",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SF1000.Mockup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mockup-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

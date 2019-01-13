@@ -5,5 +5,6 @@ target 'Mockup' do
 pod 'Alamofire'
 pod 'AlamofireImage'
 pod 'ARSLineProgress'
+pod 'CardIO'
 
 end

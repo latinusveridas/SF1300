@@ -16,5 +16,12 @@ class ProfileVC: UIViewController {
     }
     
     
+    @IBAction func ShowPaymentMethodsVC(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let PaymentVC = storyBoard.instantiateViewController(withIdentifier: "PaymentMethodsID") as! PaymentOptionsVC
+        self.present(PaymentVC, animated: true, completion: nil)
+    }
+    
+    
     
 }
