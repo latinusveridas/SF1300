@@ -156,26 +156,4 @@ func populateEventsList (targetURL: String,theSessionManager: SessionManager, co
     
 } // end of populateEventsList
 
-/*func RequestAVSports (targetURL: String, theSessionManager: SessionManager, completion: @escaping ([String]?) -> Void) {
 
-        theSessionManager.request(targetURL, method: .get)
-        .validate()
-        .responseJSON { response in
-            
-            //print(response)
-            
-            switch response.result {
-                
-            case .success:
-                
-                guard response.result.isSuccess else {return completion(nil)}
-                guard let rawInventory = response.result.value as? Array? else {return completion(nil)}
-                
-                completion(rawInventory)
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-         
-}*/

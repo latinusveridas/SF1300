@@ -67,24 +67,12 @@ class LoginVC: UIViewController, UNUserNotificationCenterDelegate {
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let newViewController = storyBoard.instantiateViewController(withIdentifier: "IDCurrentEvents")
                     self.present(newViewController,animated: true,completion: nil)
-                    /*let alertController = UIAlertController(title: "StreetFit", message: "Bienvenue", preferredStyle: UIAlertController.Style.alert)
-                    let showNextController = UIAlertAction(title: "Ok", style: .default) { (action: UIAlertAction) in
-                        // Show next ViewController
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let newViewController = storyBoard.instantiateViewController(withIdentifier: "IDCurrentEvents")
-                        self.present(newViewController, animated: true, completion: nil)
-                    }
-                    
-                    alertController.addAction(showNextController)
-                    self.present(alertController,animated: true,completion: nil)
-                    */
+
                 } else {
                     
                     // En cas de pb, message d'erreur
                     ARSLineProgress.showFail()
-                    /*let alertController = UIAlertController(title: "StreetFit", message: "Echec de la connection", preferredStyle: UIAlertController.Style.alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alertController,animated: true,completion: nil)*/
+
                 }
                 
             } // Fin du closure Alamo
@@ -142,20 +130,41 @@ func isAlamoLoginSuccess(email: String, password: String, completion: @escaping 
             
             if model.success == 1 {
                 
+                let defaults = UserDefaults.standard
+                
                 // Loading JWT1 in iPhone Memory
                 let obtainedJWT1 = model.data!.jwt1!
-                
-                let defaults = UserDefaults.standard
                 defaults.set(obtainedJWT1, forKey: "jwt1")
                 print("Stored JWT1 in UserDefault Memory: ", defaults.string(forKey: "jwt1")!)
                 
                 // Loading Organizer_ID in iPhone Memory
-                if let obtainedOrganizerId = model.data?.organizer_id {
+                if let obtainedOrganizerId = model.data!.organizer_id {
+                defaults.set(obtainedOrganizerId, forKey: "organizerID")
+                print("New Stored Org_ID is ", defaults.string(forKey: "organizerID")!)
+                    
+                // Loading FirstName in iPhone Memory
+                let obtainedFirstName = model.data!.firstName!
+                defaults.set(obtainedFirstName, forKey: "firstName")
+                print("Stored FirstName in UserDefault Memory: ", defaults.string(forKey: "firstName")!)
                 
-                    defaults.set(obtainedOrganizerId, forKey: "organizerID")
-                    print("New Stored Org_ID is ", defaults.string(forKey: "organizerID")!)
-        
-                    completion(true)
+                // Loading LastName in iPhone Memory
+                let obtainedLastName = model.data!.lastName!
+                defaults.set(obtainedLastName, forKey: "lastName")
+                print("Stored LastName in UserDefault Memory: ", defaults.string(forKey: "lastName")!)
+                
+                // Loading User_Id in iPhone Memory
+                let obtainedUserID = model.data!.userID!
+                defaults.set(obtainedUserID, forKey: "userID")
+                print("Stored userID in UserDefault Memory: ", defaults.string(forKey: "userID")!)
+                
+                // Loading PicName in iPhone Memory
+                let obtainedPicName = model.data!.picName
+                defaults.set(obtainedPicName, forKey: "picName")
+                print("Stored picName in UserDefault Memory: ", defaults.string(forKey: "picName")!)
+                    
+
+                // Send status of completion success / fail
+                completion(true)
                     
                 } else {
                     
@@ -206,6 +215,10 @@ struct AuthData: Codable {
     let jwt1 : String?
     let jwt2 : String?
     let organizer_id : String?
+    let firstName : String?
+    let lastName : String?
+    let userID : String?
+    let picName : String?
     
     enum CodingKeys: String, CodingKey {
         case fieldCount
@@ -219,6 +232,10 @@ struct AuthData: Codable {
         case jwt1 = "JWT1"
         case jwt2 = "JWT2"
         case organizer_id
+        case userID = "user_id"
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case picName = "pic_name"
     }
 }
 

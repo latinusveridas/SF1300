@@ -17,6 +17,7 @@
 		0031A93921E126180038F59F /* MapKitArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031A93821E126180038F59F /* MapKitArtwork.swift */; };
 		003B131021C54DEA0024092F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B130F21C54DEA0024092F /* RegisterVC.swift */; };
 		0044149B21C665830096E5DB /* StreetFitTokenHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */; };
+		004B97E621EB378100B6B16C /* DepreciatedWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004B97E521EB378100B6B16C /* DepreciatedWorks.swift */; };
 		0061D0AE21DC09A100425D41 /* ModProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061D0AD21DC09A100425D41 /* ModProfileVC.swift */; };
 		0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */; };
 		00C6219A21B5CA9E00BB0CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C6219921B5CA9E00BB0CB1 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		00C621A421B5CA9F00BB0CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */; };
 		00C621AF21B5CA9F00BB0CB1 /* MockupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C621AE21B5CA9F00BB0CB1 /* MockupTests.swift */; };
 		00C621BA21B5CA9F00BB0CB1 /* MockupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C621B921B5CA9F00BB0CB1 /* MockupUITests.swift */; };
+		00E1D45021EB77D20042A34E /* PaymentMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */; };
 		00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */; };
 		048D55C541D4DC2CB6DECB7F /* libPods-Mockup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A99B485E46E530F5F18903 /* libPods-Mockup.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,7 @@
 		0031A93821E126180038F59F /* MapKitArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitArtwork.swift; sourceTree = "<group>"; };
 		003B130F21C54DEA0024092F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0044149A21C665830096E5DB /* StreetFitTokenHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetFitTokenHandler.swift; sourceTree = "<group>"; };
+		004B97E521EB378100B6B16C /* DepreciatedWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepreciatedWorks.swift; sourceTree = "<group>"; };
 		0061D0AD21DC09A100425D41 /* ModProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModProfileVC.swift; sourceTree = "<group>"; };
 		0095A1AF21C5760D00B53703 /* CurrentEventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventsVC.swift; sourceTree = "<group>"; };
 		00C6219621B5CA9E00BB0CB1 /* Mockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +74,7 @@
 		00C621B521B5CA9F00BB0CB1 /* MockupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C621B921B5CA9F00BB0CB1 /* MockupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupUITests.swift; sourceTree = "<group>"; };
 		00C621BB21B5CAA000BB0CB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsVC.swift; sourceTree = "<group>"; };
 		00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5628D72218508F0A6B221476 /* Pods-Mockup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mockup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mockup/Pods-Mockup.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A99B485E46E530F5F18903 /* libPods-Mockup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mockup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +147,7 @@
 				001DC83721C98D1000A78AFE /* EventCreationVC.swift */,
 				0022A2B421E0C625004E6A08 /* ProfileVC.swift */,
 				0061D0AD21DC09A100425D41 /* ModProfileVC.swift */,
+				00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */,
 				00C6219D21B5CA9F00BB0CB1 /* Main.storyboard */,
 				00C621A221B5CA9F00BB0CB1 /* LaunchScreen.storyboard */,
 				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
@@ -152,6 +157,7 @@
 				0031A93821E126180038F59F /* MapKitArtwork.swift */,
 				00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */,
 				002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */,
+				004B97E521EB378100B6B16C /* DepreciatedWorks.swift */,
 				001AA40821BBC77500931D75 /* Assets.xcassets */,
 				0027349221C53BA300AC5A76 /* Fonts */,
 			);
@@ -356,6 +362,7 @@
 				00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */,
 				003B131021C54DEA0024092F /* RegisterVC.swift in Sources */,
 				0061D0AE21DC09A100425D41 /* ModProfileVC.swift in Sources */,
+				004B97E621EB378100B6B16C /* DepreciatedWorks.swift in Sources */,
 				002A8EBB21EA5E1700C9E4A2 /* NotificationsManagement.swift in Sources */,
 				0095A1B021C5760D00B53703 /* CurrentEventsVC.swift in Sources */,
 				0031A93921E126180038F59F /* MapKitArtwork.swift in Sources */,
@@ -363,6 +370,7 @@
 				001DC83821C98D1000A78AFE /* EventCreationVC.swift in Sources */,
 				0031A93721E100290038F59F /* EventDetailsVC.swift in Sources */,
 				00C6219A21B5CA9E00BB0CB1 /* AppDelegate.swift in Sources */,
+				00E1D45021EB77D20042A34E /* PaymentMethodsVC.swift in Sources */,
 				0044149B21C665830096E5DB /* StreetFitTokenHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

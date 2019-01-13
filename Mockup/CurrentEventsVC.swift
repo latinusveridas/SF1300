@@ -150,6 +150,11 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
     
 } // Fin de la class CurrentEventsVC
 
