@@ -132,7 +132,7 @@ func populateEventsList (targetURL: String,theSessionManager: SessionManager, co
         .validate()
         .responseJSON { response in
             
-            //print(response)
+            print(response)
             
             switch response.result {
                 

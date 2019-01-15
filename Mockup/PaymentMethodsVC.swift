@@ -51,6 +51,13 @@ class PaymentOptionsVC: UIViewController, CardIOPaymentViewControllerDelegate {
     }
     
     
+    @IBAction func Debug_Functions(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let DebugVC = storyBoard.instantiateViewController(withIdentifier: "DebugVC") as! UIViewController
+        self.present(DebugVC, animated: true, completion: nil)
+    }
+    
+    
 }
 
 

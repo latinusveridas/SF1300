@@ -105,6 +105,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.ParticipationProgressBar.progress = intSub/intPartMax
         
+        //cell.organizer_ratingStars.rating = Double(eventsList[indexPath.row].organizer_rating!)
+        
         // Last Step : Image download through AlamofireImage
         if let organizerID = eventsList[indexPath.row].organizer_id as? String {
             
@@ -173,6 +175,8 @@ extension CurrentEventsVC {
             self.eventsList = eventsList!
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
+            
+            let impact = UIImpactFeedbackGenerator(style: UIImpactFeedbackGenerator.FeedbackStyle.light)
             return
             
         }
@@ -196,8 +200,9 @@ class eventUICell: UITableViewCell {
     @IBOutlet weak var UIImage_OPP: UIImageView!
     @IBOutlet weak var UIImage_Sport: UIImageView!
     @IBOutlet weak var labelFirstName: UILabel!
-    
     @IBOutlet weak var ParticipationProgressBar: UIProgressView!
+    @IBOutlet weak var organizer_ratingStars: CosmosView!
+    
     
     //@IBOutlet weak var labelLatitude: UILabel!
     //@IBOutlet weak var labelLongitude: UILabel!
@@ -207,17 +212,18 @@ class eventUICell: UITableViewCell {
 // =========================== eventClass configuration ==============
 
 public class eventClass {
-    let event_id: String
-    let date: String
-    let location: String
-    let sport: String
+    let event_id : String
+    let date : String
+    let location : String
+    let sport : String
     let nb_part_sub : Int
     let nb_part_max : Int
     let price_per_part : Int
     let organizer_id : String
     let first_name : String
-    let latitude: String?
-    let longitude: String?
+    let latitude : String?
+    let longitude : String?
+    let organizer_rating : Int?
     
     // Initialisation de la classe
     
@@ -233,6 +239,7 @@ public class eventClass {
         self.first_name = data["first_name"] as! String
         self.latitude = data["latitude"] as? String
         self.longitude = data["longitude"] as? String
+        self.organizer_rating = data["organizer_rating"] as? Int
         
     }
     
