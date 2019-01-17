@@ -104,6 +104,9 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let intSub = Float(eventsList[indexPath.row].nb_part_sub)
         
         cell.ParticipationProgressBar.progress = intSub/intPartMax
+        if cell.ParticipationProgressBar.progress == Float(1.00) {
+            cell.ParticipationProgressBar.progressTintColor = UIColor.red
+        } else {}
         
         cell.organizer_ratingStars.rating = Double(eventsList[indexPath.row].organizer_rating!)
         

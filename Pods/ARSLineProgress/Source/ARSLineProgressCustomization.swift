@@ -30,11 +30,11 @@ import UIKit
 	public static var circleRotationDurationMiddle: CFTimeInterval = 1.5
 	public static var circleRotationDurationInner: CFTimeInterval = 0.75
 	
-	public static var checkmarkAnimationDrawDuration: CFTimeInterval = 0.4
+	public static var checkmarkAnimationDrawDuration: CFTimeInterval = 0.2
 	public static var checkmarkLineWidth: CGFloat = 2.0
 	public static var checkmarkColor: CGColor = UIColor.ars_colorWithRGB(130.0, green: 149.0, blue: 173.0, alpha: 1.0).cgColor
 	
-	public static var successCircleAnimationDrawDuration: CFTimeInterval = 0.7
+	public static var successCircleAnimationDrawDuration: CFTimeInterval = 0.4
 	public static var successCircleLineWidth: CGFloat = 2.0
 	public static var successCircleColor: CGColor = UIColor.ars_colorWithRGB(130.0, green: 149.0, blue: 173.0, alpha: 1.0).cgColor
 	
