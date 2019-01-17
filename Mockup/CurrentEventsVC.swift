@@ -89,7 +89,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! eventUICell
         cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.row].date)
-        cell.labelLocation.text = eventsList[indexPath.row].location
+        cell.labelLocation.text = eventsList[indexPath.row].city
         cell.labelSport.text = eventsList[indexPath.row].sport
         cell.labelFirstName.text = eventsList[indexPath.row].first_name
 
@@ -105,7 +105,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         cell.ParticipationProgressBar.progress = intSub/intPartMax
         
-        //cell.organizer_ratingStars.rating = Double(eventsList[indexPath.row].organizer_rating!)
+        cell.organizer_ratingStars.rating = Double(eventsList[indexPath.row].organizer_rating!)
         
         // Last Step : Image download through AlamofireImage
         if let organizerID = eventsList[indexPath.row].organizer_id as? String {
@@ -144,7 +144,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "EventDetailsVC") as! EventDetailsVC
         
         newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.row])
-        newViewController.LocationData = eventsList[indexPath.row].location
+        newViewController.LocationData = eventsList[indexPath.row].city
         newViewController.LatitudeData = eventsList[indexPath.row].latitude!
         newViewController.LongitudeData = eventsList[indexPath.row].longitude!
         
@@ -214,7 +214,7 @@ class eventUICell: UITableViewCell {
 public class eventClass {
     let event_id : String
     let date : String
-    let location : String
+    let city : String
     let sport : String
     let nb_part_sub : Int
     let nb_part_max : Int
@@ -230,7 +230,7 @@ public class eventClass {
     init(data: [String:Any]) {
         self.event_id = data["event_id"] as! String
         self.date = data["date"] as! String
-        self.location = data["location"] as! String
+        self.city = data["city"] as! String
         self.sport = data["sport"] as! String
         self.nb_part_sub = data["nb_part_sub"] as! Int
         self.nb_part_max = data["nb_part_max"] as! Int
@@ -284,7 +284,7 @@ func copyEventData(selectedEvent: eventClass) -> [String:Any] {
     
      dataDict["event_id"] = selectedEvent.event_id
      dataDict["date"] = selectedEvent.date
-     dataDict["location"] = selectedEvent.location
+     dataDict["location"] = selectedEvent.city
      dataDict["sport"] = selectedEvent.sport
      dataDict["nb_part_sub"] = selectedEvent.nb_part_sub
      dataDict["nb_part_max"] = selectedEvent.nb_part_max

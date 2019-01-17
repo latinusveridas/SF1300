@@ -100,7 +100,7 @@ class StreetFitTokenHandler: RequestAdapter, RequestRetrier {
         sessionManager.request(urlString, method: .post,encoding: JSONEncoding.default, headers: headers).responseJSON { [weak self] response in
             guard let strongSelf = self else { return }
             
-            let json = response.result.value as! [String:Any]
+            guard let json = response.result.value as? [String:Any] else {return}
             let data = json["data"] as! [String:Any]
             let jwt2 = data["JWT2"] as? String
             

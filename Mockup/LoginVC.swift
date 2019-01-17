@@ -23,10 +23,10 @@ class LoginVC: UIViewController, UNUserNotificationCenterDelegate {
         
         // Cosmetic
         
-        self.emailTextField.layer.borderColor = UIColor(red: 37/255, green: 251/255, blue: 232/255, alpha: 1).cgColor
+        self.emailTextField.layer.borderColor = UIColor(red: 41/255, green: 202/255, blue: 126/255, alpha: 1).cgColor
         self.emailTextField.layer.borderWidth = CGFloat(Float(1.0))
         
-        self.passwordTextField.layer.borderColor = UIColor(red: 37/255, green: 251/255, blue: 232/255, alpha: 1).cgColor
+        self.passwordTextField.layer.borderColor = UIColor(red: 41/255, green: 202/255, blue: 126/255, alpha: 1).cgColor
         self.passwordTextField.layer.borderWidth = CGFloat(Float(1.0))
         
         // Hide Keyboard

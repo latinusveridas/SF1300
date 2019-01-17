@@ -10,6 +10,7 @@
 		0011B97E21EE603900B01BA5 /* RatingEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011B97D21EE603900B01BA5 /* RatingEventVC.swift */; };
 		0017AAFD21D8EFB300970162 /* General Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0017AAFC21D8EFB300970162 /* General Helpers.swift */; };
 		001DC83821C98D1000A78AFE /* EventCreationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DC83721C98D1000A78AFE /* EventCreationVC.swift */; };
+		0021649321EFAEC100EE7BBC /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0021649221EFAEC100EE7BBC /* LaunchImage.png */; };
 		0022A2B521E0C625004E6A08 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022A2B421E0C625004E6A08 /* ProfileVC.swift */; };
 		0027349421C53BC800AC5A76 /* steelfish rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0027349321C53BA900AC5A76 /* steelfish rg.ttf */; };
 		002A8EBB21EA5E1700C9E4A2 /* NotificationsManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */; };
@@ -36,7 +37,6 @@
 		00E1D45021EB77D20042A34E /* PaymentMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */; };
 		00F8EDC521E9EC6B00D8C2E7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */; };
 		00FB639A21EE75A900F2F5A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00FB639921EE75A900F2F5A8 /* Assets.xcassets */; };
-		00FB639C21EE7CF700F2F5A8 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 00FB639B21EE7CF700F2F5A8 /* LaunchImage.png */; };
 		048D55C541D4DC2CB6DECB7F /* libPods-Mockup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A99B485E46E530F5F18903 /* libPods-Mockup.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +62,7 @@
 		0011B97D21EE603900B01BA5 /* RatingEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingEventVC.swift; sourceTree = "<group>"; };
 		0017AAFC21D8EFB300970162 /* General Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General Helpers.swift"; sourceTree = "<group>"; };
 		001DC83721C98D1000A78AFE /* EventCreationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationVC.swift; sourceTree = "<group>"; };
+		0021649221EFAEC100EE7BBC /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		0022A2B421E0C625004E6A08 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0027349321C53BA900AC5A76 /* steelfish rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "steelfish rg.ttf"; sourceTree = "<group>"; };
 		002A8EBA21EA5E1700C9E4A2 /* NotificationsManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManagement.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		00E1D44F21EB77D20042A34E /* PaymentMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsVC.swift; sourceTree = "<group>"; };
 		00F8EDC421E9EC6B00D8C2E7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		00FB639921EE75A900F2F5A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Mockup/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		00FB639B21EE7CF700F2F5A8 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		5628D72218508F0A6B221476 /* Pods-Mockup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mockup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mockup/Pods-Mockup.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A99B485E46E530F5F18903 /* libPods-Mockup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mockup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E957F205FBB9742BB2ADD035 /* Pods-Mockup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mockup.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mockup/Pods-Mockup.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				004B97E521EB378100B6B16C /* DepreciatedWorks.swift */,
 				0011B97D21EE603900B01BA5 /* RatingEventVC.swift */,
 				00C621A521B5CA9F00BB0CB1 /* Info.plist */,
-				00FB639B21EE7CF700F2F5A8 /* LaunchImage.png */,
+				0021649221EFAEC100EE7BBC /* LaunchImage.png */,
 				00FB639921EE75A900F2F5A8 /* Assets.xcassets */,
 				0032700A21EE6460006F80AC /* Raw Sources */,
 				0027349221C53BA300AC5A76 /* Fonts */,
@@ -349,7 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0027349421C53BC800AC5A76 /* steelfish rg.ttf in Resources */,
-				00FB639C21EE7CF700F2F5A8 /* LaunchImage.png in Resources */,
+				0021649321EFAEC100EE7BBC /* LaunchImage.png in Resources */,
 				00C621A421B5CA9F00BB0CB1 /* LaunchScreen.storyboard in Resources */,
 				00FB639A21EE75A900F2F5A8 /* Assets.xcassets in Resources */,
 				00C6219F21B5CA9F00BB0CB1 /* Main.storyboard in Resources */,
