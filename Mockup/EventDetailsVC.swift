@@ -56,6 +56,29 @@ class EventDetailsVC: UIViewController {
     }
     
     
+    @IBAction func BookEvent_Action(_ sender: Any) {
+        
+        let data: [String:Any] = [
+            "event_id" : eventBaseInfo["event_id"]!,
+            "user_id" : UserDefaults.standard.string(forKey: "userID")!
+        ]
+        
+        isBooked(eventData: data) { rawRes in
+            
+            if rawRes == true {
+                
+                ARSLineProgress.showSuccess()
+                
+            } else {
+                
+                ARSLineProgress.showFail()
+            }
+            
+        }
+        
+    }
+    
+    
 
     func setupLocationManager() {
     
@@ -135,3 +158,88 @@ extension EventDetailsVC: CLLocationManagerDelegate {
     }
     
 } // end of Extension
+
+// ====================== HELPERS ==============================
+
+
+func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
+    // This function ask for a booking of the information in the event_data and return a bool indicating completion
+    
+    let SFTokenHandler = StreetFitTokenHandler()
+    let sessionManager = SFTokenHandler.sessionManager
+    sessionManager.adapter = SFTokenHandler
+    sessionManager.retrier = SFTokenHandler
+    let urlString = "http://83.217.132.102:3000/auth/bookings/book"
+    
+    let headers: HTTPHeaders = [
+        "Content-Type" : "application/json; charset=UTF-8"
+    ]
+    
+    sessionManager.request(urlString, method: .post, parameters: eventData, encoding: JSONEncoding.default, headers: headers)
+        .validate()
+        .responseJSON { response in
+            
+            print(response)
+            
+            switch response.result {
+                
+            case .success: //Ne presume pas un succes, simplement une reponse du server
+                
+                // Protections
+                guard response.result.isSuccess else {return completion(false)}
+                guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
+                
+                // Verification error
+                if rawInventory!["success"] as! Int == 1 {
+                    
+                    completion(true)
+                    
+                } else {
+                    
+                    if rawInventory!["error"] as! Int == 1 {
+                        
+                        switch rawInventory!["error_description"] as! String {
+                            
+                        case "event already full":
+                            
+                            print("full")
+                            completion(false)
+                            
+                        default:
+                            print("default")
+                            completion(false)
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+                
+                
+                /*if let errorStatus = rawInventory!["error"] {
+                   if rawInventory!["error_description"] as! String == "event already full" {
+                    
+                    completion(false)
+                    
+                   } else {}
+                }
+                
+                if let successStatus = rawInventory!["success"] {
+                    if successStatus as! String == "" {
+                        
+                        print("NIL !!")
+                        
+                    }
+                }
+                
+                
+                */
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+    }
+    
+}

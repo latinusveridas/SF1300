@@ -1048,6 +1048,9 @@
                                 <state key="normal" title="S'inscrire">
                                     <color key="titleColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="BookEvent_Action:" destination="hZ5-yY-kF4" eventType="touchUpInside" id="p4n-B8-woc"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pj-5i-UOi">
                                 <rect key="frame" x="119" y="153" width="240" height="40"/>
@@ -1139,7 +1142,7 @@
     </scenes>
     <resources>
         <image name="CellSportBG" width="325" height="267"/>
-        <image name="coach profile picture" width="136" height="184"/>
+        <image name="coach profile picture" width="205" height="250"/>
         <image name="location_pin_gps-512" width="512" height="512"/>
         <image name="profile_blank" width="225" height="225"/>
         <image name="rec1" width="375" height="128"/>
