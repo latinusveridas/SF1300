@@ -190,51 +190,31 @@ func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
                 guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
                 
                 // Verification error
-                if rawInventory!["success"] as! Int == 1 {
-                    
-                    completion(true)
-                    
-                } else {
-                    
+                switch rawInventory!["success"] as! String {
+
+                case nil:
                     if rawInventory!["error"] as! Int == 1 {
-                        
-                        switch rawInventory!["error_description"] as! String {
-                            
-                        case "event already full":
-                            
+                             //Error confirmed 
+                            switch rawInventory!["error_decription"]{
+
+                            case "event already full":
                             print("full")
                             completion(false)
-                            
-                        default:
-                            print("default")
+
+                            default:
+                            print("df")
                             completion(false)
-                        }
-                        
+                            }
                     }
-                    
-                }
-                
-                
-                
-                
-                /*if let errorStatus = rawInventory!["error"] {
-                   if rawInventory!["error_description"] as! String == "event already full" {
-                    
+
+                case "1":
+                    completion(true)
+                default:
+                    print("df")
                     completion(false)
-                    
-                   } else {}
+
                 }
                 
-                if let successStatus = rawInventory!["success"] {
-                    if successStatus as! String == "" {
-                        
-                        print("NIL !!")
-                        
-                    }
-                }
-                
-                
-                */
             case .failure(let error):
                 print(error)
                 
