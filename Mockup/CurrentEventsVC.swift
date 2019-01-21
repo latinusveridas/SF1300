@@ -14,31 +14,38 @@ import UserNotifications
 
 class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
     
+// MARK: Variables   
+    
+    // IBOutlets
     @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-        // ============================== VARIABLES ===============================
-    // When data is received, it's filled in eventsList
+    // When data is received, it's filled in eventsList, which is composed of eventsList
     var eventsList: [eventClass] = []
+    
+    // Setting of Pull To Refresh
     let refreshControl = UIRefreshControl()
     
     // Loading of the ViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setting the delegated functions for tableview
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        
+        // Rounded ProfileButton
         ProfileButton.titleLabel!.text = ""
         ProfileButton.frame = CGRect(x: 8.00, y: 82.00, width: 40.00, height: 40.00)
         if let imageB  = UIImage(named: "coach profile picture") {
             ProfileButton.setBackgroundImage(imageB, for: .normal)
             
         }
+        
+        // Profile button go to ProfileVC
         ProfileButton.addTarget(self, action: #selector(self.buttonClicked), for: UIControl.Event.touchUpInside)
         
-        
+        // Refresh tableviews with Alamofire
         let SFTokenHandler = StreetFitTokenHandler()
         let sessionManager = SFTokenHandler.sessionManager
         sessionManager.adapter = SFTokenHandler
@@ -50,7 +57,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.tableView.reloadData()
         }
         
-        
+        // Pull to refresh functions
         refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
         refreshControl.addTarget(self, action: #selector(refreshTableEvents), for: UIControl.Event.valueChanged)
         
@@ -60,9 +67,9 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             self.tableView.addSubview(refreshControl)
         }
         
+        // Notification Center delegate
         UNUserNotificationCenter.current().delegate = self
-        
-        
+            
     } // End of ViewDidLoad
     
     
@@ -79,13 +86,11 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     
     // Count received events in eventsList
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventsList.count
     }
     
     // Populate data in cells
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! eventUICell
         cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.row].date)
@@ -134,13 +139,11 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     // Define the number of sections - normally its 1
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     // Evenement en cas de selection d'une ligne
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -207,11 +210,7 @@ class eventUICell: UITableViewCell {
     @IBOutlet weak var labelFirstName: UILabel!
     @IBOutlet weak var ParticipationProgressBar: UIProgressView!
     @IBOutlet weak var organizer_ratingStars: CosmosView!
-    
-    
-    //@IBOutlet weak var labelLatitude: UILabel!
-    //@IBOutlet weak var labelLongitude: UILabel!
-    
+        
 }
 
 // MARK: - Configuration eventClass
