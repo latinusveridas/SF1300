@@ -16,21 +16,18 @@ import CoreLocation
 class EventDetailsVC: UIViewController {
 
     @IBOutlet weak var DescriptionMap: MKMapView!
+    @IBOutlet weak var LocationLabel: UILabel!
+    @IBOutlet weak var EventDescription: UILabel!
     
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
     let regionInMeters: Double = 10000
-    
-    // Populated on segue
     var LocationData: String?
     var LatitudeData: String?
     var LongitudeData: String?
     var eventLocation: CLLocationCoordinate2D?
-    var eventBaseInfo: [String:Any] = [:]
-    
-    @IBOutlet weak var LocationLabel: UILabel!
+    var eventBaseInfo: [String:Any] = [:] // Populated on segue
 
-    
  override func viewDidLoad() {
     super.viewDidLoad()
 
