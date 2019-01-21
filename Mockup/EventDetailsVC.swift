@@ -64,19 +64,15 @@ class EventDetailsVC: UIViewController {
         ]
         
         isBooked(eventData: data) { rawRes in
-            
             if rawRes == true {
-                
                 ARSLineProgress.showSuccess()
-                
             } else {
-                
                 ARSLineProgress.showFail()
             }
             
-        }
+        } // is booked
         
-    }
+    } // action book
     
     
 
