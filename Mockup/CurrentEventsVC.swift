@@ -66,7 +66,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     } // End of ViewDidLoad
     
     
-// ============================== TABLE FUNCTIONS ============================
+// MARK: - Table View delegate methods
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         //return UITableView.automaticDimension
@@ -163,6 +163,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
 } // Fin de la class CurrentEventsVC
 
+// MARK: - Extension CurrentEventsVC
+
 extension CurrentEventsVC {
     
     @objc func refreshTableEvents() {
@@ -189,7 +191,7 @@ extension CurrentEventsVC {
     
 }
 
-// ======================= CELL CONFIGURATION ================================
+// MARK: - Cell definition
 
 class eventUICell: UITableViewCell {
     
@@ -212,7 +214,7 @@ class eventUICell: UITableViewCell {
     
 }
 
-// =========================== eventClass configuration ==============
+// MARK: - Configuration eventClass
 
 public class eventClass {
     let event_id : String
@@ -248,8 +250,7 @@ public class eventClass {
     
 }
 
-
-// ========================== HELPERS ==================================
+// MARK: - Helpers
 
 func sportLabelConverter(strSport: String) -> String {
 // This function collect the name of the sport and convert it to a name of the image stored in the application
