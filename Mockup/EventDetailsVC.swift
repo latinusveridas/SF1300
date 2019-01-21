@@ -46,7 +46,7 @@ class EventDetailsVC: UIViewController {
     
 } // end of view load
     
-    
+// MARK: - IBAction
     
     @IBAction func Action_CloseVC(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -71,7 +71,7 @@ class EventDetailsVC: UIViewController {
         
     } // action book
     
-    
+// MARK: - Location functions
 
     func setupLocationManager() {
     
@@ -152,8 +152,7 @@ extension EventDetailsVC: CLLocationManagerDelegate {
     
 } // end of Extension
 
-// ====================== HELPERS ==============================
-
+// MARK: - NETWORK HELPERS
 
 func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
     // This function ask for a booking of the information in the event_data and return a bool indicating completion
