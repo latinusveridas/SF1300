@@ -12,7 +12,8 @@ import Alamofire
 import ARSLineProgress
 
 class CreateEventVC: UIViewController {
-    
+
+    // MARK: IBOutlets
 
     @IBOutlet weak var Adress: UITextField!
     @IBOutlet weak var sportselected: UILabel!
@@ -23,6 +24,8 @@ class CreateEventVC: UIViewController {
     @IBOutlet weak var SportPicker: UIPickerView!
     @IBOutlet weak var newDateField: UITextField!
     
+    // MARK: Initialization of variables
+    
     var pricePicker: UIPickerView = UIPickerView()
     var newDatePicker: UIDatePicker = UIDatePicker()
     var partPicker: UIPickerView = UIPickerView()
@@ -31,6 +34,7 @@ class CreateEventVC: UIViewController {
     var sportsAV: [String] = []
     let orgID = UserDefaults.standard.string(forKey: "organizerID")!
     
+    // Loading of CurrentVC
     override func viewDidLoad() {
     super.viewDidLoad()
     self.HideKeyboard()
@@ -53,6 +57,7 @@ class CreateEventVC: UIViewController {
         self.partPicker.dataSource = self
         }
     
+    // UIPicker delegation methods    
     priceField.inputView = pricePicker
     newDateField.inputView = newDatePicker
     ParticipantField.inputView = partPicker
