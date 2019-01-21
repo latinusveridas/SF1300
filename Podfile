@@ -6,5 +6,6 @@ pod 'Alamofire'
 pod 'AlamofireImage'
 pod 'ARSLineProgress'
 pod 'CardIO'
+pod 'EFAutoScrollLabel'
 
 end

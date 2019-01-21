@@ -182,12 +182,12 @@ func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
                 guard let rawInventory = response.result.value as? [String:Any]? else {return completion(false)}
                 
                 // Verification error
-                switch rawInventory!["success"] as! String {
+                switch rawInventory!["success"] as! Int {
 
-                case nil:
+                case 0:
                     if rawInventory!["error"] as! Int == 1 {
                              //Error confirmed 
-                            switch rawInventory!["error_decription"]{
+                            switch rawInventory!["error_description"] as! String {
 
                             case "event already full":
                             print("full")
@@ -199,7 +199,7 @@ func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
                             }
                     }
 
-                case "1":
+                case 1:
                     completion(true)
                 default:
                     print("df")

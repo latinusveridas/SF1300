@@ -4,12 +4,14 @@ PODS:
     - Alamofire (~> 4.8)
   - ARSLineProgress (3.1.0)
   - CardIO (5.4.1)
+  - EFAutoScrollLabel (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - ARSLineProgress
   - CardIO
+  - EFAutoScrollLabel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -17,13 +19,15 @@ SPEC REPOS:
     - AlamofireImage
     - ARSLineProgress
     - CardIO
+    - EFAutoScrollLabel
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   ARSLineProgress: 60778657c69491796c3faf5b834c72924c405833
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  EFAutoScrollLabel: 4d697656ad7838eebc9122b1e3b24243c35e7dd4
 
-PODFILE CHECKSUM: d80f2f27bac31e19fc7f40cbb0a126cbb93115d7
+PODFILE CHECKSUM: 44c6aa9bc208d2b972e81129ebd244245fa665e2
 
 COCOAPODS: 1.5.3

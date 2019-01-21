@@ -823,7 +823,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-8z-urD">
-                                <rect key="frame" x="0.0" y="122" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="585"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.5497076742" green="1" blue="0.71071407649999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1014,6 +1014,11 @@
                                 <color key="textColor" white="0.94528537326388884" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhS-HM-E2N" customClass="EFAutoScrollLabel" customModule="EFAutoScrollLabel">
+                                <rect key="frame" x="0.0" y="122" width="375" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16078431372549018" green="0.792156862745098" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UaC-GX-Ri2"/>
@@ -1021,6 +1026,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="9lp-0r-RtD"/>
                     <connections>
                         <outlet property="ProfileButton" destination="xNg-Hy-PZ4" id="uOd-ha-Qgb"/>
+                        <outlet property="horiScroller" destination="MhS-HM-E2N" id="DoW-g0-rBX"/>
                         <outlet property="tableView" destination="Aea-8z-urD" id="VI9-0e-6gf"/>
                     </connections>
                 </viewController>

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "268656D6A01E66F550BFD0AF36FF9405"
-               BlueprintName = "Pods-Mockup"
+               BlueprintIdentifier = "A345270767F70A8A4C28296C9F04FDF0"
+               BlueprintName = "EFAutoScrollLabel"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-Mockup.a">
+               BuildableName = "libEFAutoScrollLabel.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

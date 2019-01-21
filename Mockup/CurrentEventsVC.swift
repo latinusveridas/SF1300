@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import UserNotifications
+import EFAutoScrollLabel
 
 class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate {
     
@@ -19,6 +20,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     // IBOutlets
     @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var horiScroller: EFAutoScrollLabel!
+    
     
     // When data is received, it's filled in eventsList, which is composed of eventsList
     var eventsList: [eventClass] = []
@@ -69,6 +72,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         // Notification Center delegate
         UNUserNotificationCenter.current().delegate = self
+        
+        initHorScroller(scr: horiScroller)
             
     } // End of ViewDidLoad
     
@@ -321,3 +326,22 @@ extension CurrentEventsVC {
 
 }
 
+// MARK: Scoller function
+
+func initHorScroller(scr:EFAutoScrollLabel) {
+    
+    scr.backgroundColor = UIColor(red: 41.0 / 255.0, green: 202.0 / 255.0, blue: 126.0 / 255.0, alpha: 1)
+    scr.textColor = UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1)
+    //scr.font = UIFont.systemFont(ofSize: 13)
+    scr.font = UIFont.boldSystemFont(ofSize: 13)
+    scr.labelSpacing = 30                       // Distance between start and end labels
+    scr.pauseInterval = 1.7                     // Seconds of pause before scrolling starts again
+    scr.scrollSpeed = 30                        // Pixels per second
+    scr.textAlignment = NSTextAlignment.left    // Centers text when no auto-scrolling is applied
+    scr.fadeLength = 0                       // Length of the left and right edge fade, 0 to disable
+    scr.scrollDirection = EFAutoScrollDirection.Left
+    scr.observeApplicationNotifications()
+    scr.text = "Dernière infos StreetFit : Félicitations à Valentin pour son premier évènement à Bordeaux | Grosse blessure pour Giroud, qui décidemment ne sers à rien dans le collection | Quentin est devenu Coach niveau 15 | Thibault fait le tapin pour Gillois"
+    
+    
+}

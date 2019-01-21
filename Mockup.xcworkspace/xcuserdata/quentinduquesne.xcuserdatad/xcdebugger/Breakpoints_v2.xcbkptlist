@@ -183,11 +183,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/CurrentEventsVC.swift"
-            timestampString = "569698345.742955"
+            timestampString = "569786196.952988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "formatDate(strDate:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -231,7 +231,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.182606"
+            timestampString = "569786196.953284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -247,13 +247,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/CurrentEventsVC.swift"
-            timestampString = "569698345.743395"
+            timestampString = "569786196.9533221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "CurrentEventsVC"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -295,12 +295,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/CurrentEventsVC.swift"
-            timestampString = "569698345.743439"
+            timestampString = "569786196.9535151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -311,7 +311,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/ProfileVC.swift"
-            timestampString = "569272143.543334"
+            timestampString = "569786196.953704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -327,7 +327,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.182951"
+            timestampString = "569786196.953739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "165"
@@ -343,7 +343,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.183149"
+            timestampString = "569786196.953769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
@@ -359,7 +359,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.1833349"
+            timestampString = "569786196.953799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -375,13 +375,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.18353"
+            timestampString = "569786196.953827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
             endingLineNumber = "190"
             landmarkName = "isBooked(eventData:completion:)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Mockup.isBooked(eventData: Swift.Dictionary&lt;Swift.String, Swift.Optional&lt;Any&gt;&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventDetailsVC.swift"
+                  timestampString = "569783286.77011"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "2138">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in Mockup.isBooked(eventData: Swift.Dictionary&lt;Swift.String, Swift.Optional&lt;Any&gt;&gt;, completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Mockup"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/quentinduquesne/Documents/GitHub/SF1300/Mockup/EventDetailsVC.swift"
+                  timestampString = "569783286.775679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "2695">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -391,7 +423,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.183708"
+            timestampString = "569786196.953856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
@@ -407,13 +439,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.183884"
+            timestampString = "569786196.953884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "isBooked(eventData:completion:)"
-            landmarkType = "9">
+            startingLineNumber = "218"
+            endingLineNumber = "218">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -423,11 +453,105 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mockup/EventDetailsVC.swift"
-            timestampString = "569699254.1840611"
+            timestampString = "569786196.953912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "218"
+            endingLineNumber = "218">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.95394"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "isBooked(eventData:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.953968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "isBooked(eventData:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.953995"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "isBooked(eventData:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.954024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "isBooked(eventData:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.954051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "isBooked(eventData:completion:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mockup/EventDetailsVC.swift"
+            timestampString = "569786196.954078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "isBooked(eventData:completion:)"
             landmarkType = "9">
          </BreakpointContent>
