@@ -21,6 +21,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var horiScroller: EFAutoScrollLabel!
+    let cellSpacingHeight: CGFloat = 7
     
     
     // When data is received, it's filled in eventsList, which is composed of eventsList
@@ -89,10 +90,22 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return 100
     }
     
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
     
     // Count received events in eventsList
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventsList.count
+        //return eventsList.count
+        return 1
     }
     
     // Populate data in cells
@@ -145,7 +158,8 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // Define the number of sections - normally its 1
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // return 1
+        return eventsList.count
     }
     
     // Evenement en cas de selection d'une ligne
