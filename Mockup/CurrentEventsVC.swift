@@ -155,10 +155,10 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "EventDetailsVC") as! EventDetailsVC
         
-        newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.row])
-        newViewController.LocationData = eventsList[indexPath.row].city
-        newViewController.LatitudeData = eventsList[indexPath.row].latitude!
-        newViewController.LongitudeData = eventsList[indexPath.row].longitude!
+        newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.section])
+        newViewController.LocationData = eventsList[indexPath.section].city
+        newViewController.LatitudeData = eventsList[indexPath.section].latitude!
+        newViewController.LongitudeData = eventsList[indexPath.section].longitude!
         
         self.present(newViewController,animated: true,completion: nil)
         
