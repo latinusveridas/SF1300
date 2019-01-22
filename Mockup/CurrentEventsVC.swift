@@ -21,7 +21,7 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var ProfileButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var horiScroller: EFAutoScrollLabel!
-    let cellSpacingHeight: CGFloat = 7
+    let cellSpacingHeight: CGFloat = 10
     
     
     // When data is received, it's filled in eventsList, which is composed of eventsList
@@ -248,6 +248,7 @@ public class eventClass {
     let latitude : String?
     let longitude : String?
     let organizer_rating : Int?
+    let event_description : String?
     
     // Initialisation de la classe
     
@@ -264,6 +265,7 @@ public class eventClass {
         self.latitude = data["latitude"] as? String
         self.longitude = data["longitude"] as? String
         self.organizer_rating = data["organizer_rating"] as? Int
+        self.event_description = data["description"] as? String
         
     }
     
@@ -316,6 +318,7 @@ func copyEventData(selectedEvent: eventClass) -> [String:Any] {
      dataDict["first_name"] = selectedEvent.first_name
      dataDict["latitude"] = selectedEvent.latitude
      dataDict["longitude"] = selectedEvent.longitude
+     dataDict["event_description"] = selectedEvent.event_description
     
     return dataDict
 

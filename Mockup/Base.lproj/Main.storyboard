@@ -956,7 +956,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.94404346446700516" green="0.93948286802030467" blue="0.94860406091370564" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="ParticipationProgressBar" destination="ID3-HZ-6Xy" id="Tvb-9c-26p"/>
                                             <outlet property="UIImage_OPP" destination="nqo-Ma-MuA" id="gY7-ZD-apb"/>
@@ -1120,7 +1120,9 @@
                         <viewLayoutGuide key="safeArea" id="gWT-TN-Nmw"/>
                     </view>
                     <connections>
+                        <outlet property="ButtonSubscribe" destination="lih-EI-KMe" id="Gu6-qE-DTq"/>
                         <outlet property="DescriptionMap" destination="JtH-hP-Jql" id="RXV-gs-l5X"/>
+                        <outlet property="EventDescription" destination="bmI-WY-mb9" id="NRh-Yp-Gck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYI-aR-ZHu" userLabel="First Responder" sceneMemberID="firstResponder"/>

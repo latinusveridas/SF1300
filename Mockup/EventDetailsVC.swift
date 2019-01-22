@@ -18,6 +18,8 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var DescriptionMap: MKMapView!
     @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var EventDescription: UILabel!
+    @IBOutlet weak var ButtonSubscribe: UIButton!
+    
     
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
@@ -42,7 +44,20 @@ class EventDetailsVC: UIViewController {
                           coordinate: eventLocation)
     DescriptionMap.addAnnotation(artwork)
     
-    print(eventBaseInfo)
+    print("BASE INFO", eventBaseInfo)
+    
+    EventDescription.text = eventBaseInfo["event_description"] as! String
+    
+    var nbMax = eventBaseInfo["nb_part_max"] as! Int
+    var nbSub = eventBaseInfo["nb_part_sub"] as! Int
+    
+    if (nbSub == nbMax) {
+        
+        ButtonSubscribe.backgroundColor = UIColor.red
+        ButtonSubscribe.setTitle("Plein", for: .normal)
+        ButtonSubscribe.isEnabled  = false
+    }
+    
     
 } // end of view load
     
