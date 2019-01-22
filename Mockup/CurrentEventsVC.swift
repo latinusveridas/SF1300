@@ -110,31 +110,32 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // Populate data in cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Before it was indexPath.row, now is indexPath.section
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! eventUICell
-        cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.row].date)
-        cell.labelLocation.text = eventsList[indexPath.row].city
-        cell.labelSport.text = eventsList[indexPath.row].sport
-        cell.labelFirstName.text = eventsList[indexPath.row].first_name
+        cell.labelDate.text =  formatDate(strDate: eventsList[indexPath.section].date)
+        cell.labelLocation.text = eventsList[indexPath.section].city
+        cell.labelSport.text = eventsList[indexPath.section].sport
+        cell.labelFirstName.text = eventsList[indexPath.section].first_name
 
         // Not string data converted to String
-        cell.labelSubscribed.text = "\(eventsList[indexPath.row].nb_part_sub)"
-        cell.labelPart_max.text = "\(eventsList[indexPath.row].nb_part_max)"
-        cell.labelPrice.text = "\(eventsList[indexPath.row].price_per_part)"
+        cell.labelSubscribed.text = "\(eventsList[indexPath.section].nb_part_sub)"
+        cell.labelPart_max.text = "\(eventsList[indexPath.section].nb_part_max)"
+        cell.labelPrice.text = "\(eventsList[indexPath.section].price_per_part)"
         
-        cell.UIImage_Sport.image = UIImage(named: sportLabelConverter(strSport: eventsList[indexPath.row].sport)) // We use helper sportLabelConverter to convert the name
+        cell.UIImage_Sport.image = UIImage(named: sportLabelConverter(strSport: eventsList[indexPath.section].sport)) // We use helper sportLabelConverter to convert the name
         
-        let intPartMax = Float(eventsList[indexPath.row].nb_part_max)
-        let intSub = Float(eventsList[indexPath.row].nb_part_sub)
+        let intPartMax = Float(eventsList[indexPath.section].nb_part_max)
+        let intSub = Float(eventsList[indexPath.section].nb_part_sub)
         
         cell.ParticipationProgressBar.progress = intSub/intPartMax
         if cell.ParticipationProgressBar.progress == Float(1.00) {
             cell.ParticipationProgressBar.progressTintColor = UIColor.red
         } else {}
         
-        cell.organizer_ratingStars.rating = Double(eventsList[indexPath.row].organizer_rating!)
+        cell.organizer_ratingStars.rating = Double(eventsList[indexPath.section].organizer_rating!)
         
         // Last Step : Image download through AlamofireImage
-        if let organizerID = eventsList[indexPath.row].organizer_id as? String {
+        if let organizerID = eventsList[indexPath.section].organizer_id as? String {
             
             // Building the URL
             let firstPartURL = "http://83.217.132.102:3000/"
@@ -168,10 +169,10 @@ class CurrentEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "EventDetailsVC") as! EventDetailsVC
         
-        newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.row])
-        newViewController.LocationData = eventsList[indexPath.row].city
-        newViewController.LatitudeData = eventsList[indexPath.row].latitude!
-        newViewController.LongitudeData = eventsList[indexPath.row].longitude!
+        newViewController.eventBaseInfo = copyEventData(selectedEvent: eventsList[indexPath.section])
+        newViewController.LocationData = eventsList[indexPath.section].city
+        newViewController.LatitudeData = eventsList[indexPath.section].latitude!
+        newViewController.LongitudeData = eventsList[indexPath.section].longitude!
         
         self.present(newViewController,animated: true,completion: nil)
         
