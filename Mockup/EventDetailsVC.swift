@@ -14,13 +14,13 @@ import ARSLineProgress
 import CoreLocation
 
 class EventDetailsVC: UIViewController {
-
+    // IBOutlet
     @IBOutlet weak var DescriptionMap: MKMapView!
     @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var EventDescription: UILabel!
     @IBOutlet weak var ButtonSubscribe: UIButton!
     
-    
+    // Basic Data
     let locationManager = CLLocationManager()
     var currentCoordinate: CLLocationCoordinate2D?
     let regionInMeters: Double = 10000
@@ -53,9 +53,7 @@ class EventDetailsVC: UIViewController {
     DescriptionMap.addAnnotation(artwork)
     
     print("BASE INFO", eventBaseInfo)
-    
-
-    
+       
     
 } // end of view load
     
@@ -94,7 +92,7 @@ class EventDetailsVC: UIViewController {
     
     
     func centerViewOnUserLocation() {
-        
+       
        if let location = locationManager.location?.coordinate {
         let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
             DescriptionMap.setRegion(region, animated: true)
@@ -143,15 +141,12 @@ class EventDetailsVC: UIViewController {
 
 } // end of EventDescriptionVC class
 
+// MARK: Extension CLLocationManagerDelegate
 
 extension EventDetailsVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        /*guard let location = locations.last else { return }
-        let region = MKCoordinateRegionMakeWithDistance(location.coordinate, regionInMeters, regionInMeters)
-        DescriptionMap.setRegion(region, animated: true) */
-        
+                
         let eventLocation = CLLocationCoordinate2D(latitude: Double(LatitudeData!)!, longitude: Double(LongitudeData!)!)
         let region = MKCoordinateRegion(center: eventLocation, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         DescriptionMap.setRegion(region, animated: true)
