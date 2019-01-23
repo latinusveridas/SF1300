@@ -32,9 +32,17 @@ class EventDetailsVC: UIViewController {
 
  override func viewDidLoad() {
     super.viewDidLoad()
-
+     
+    EventDescription.text = eventBaseInfo["event_description"] as! String
+    
+    // Check if event is full to block the booking
+    var nbMax = eventBaseInfo["nb_part_max"] as! Int
+    var nbSub = eventBaseInfo["nb_part_sub"] as! Int
+    if (nbSub == nbMax) {
+    ChangeSubscribedButtonToFull(ButtonSubscribe)
+    }
+     
     let eventLocation = CLLocationCoordinate2D(latitude: Double(LatitudeData!)!, longitude: Double(LongitudeData!)!)
-
     checkLocationServices()
 
     // Artwork
@@ -46,17 +54,7 @@ class EventDetailsVC: UIViewController {
     
     print("BASE INFO", eventBaseInfo)
     
-    EventDescription.text = eventBaseInfo["event_description"] as! String
-    
-    var nbMax = eventBaseInfo["nb_part_max"] as! Int
-    var nbSub = eventBaseInfo["nb_part_sub"] as! Int
-    
-    if (nbSub == nbMax) {
-        
-        ButtonSubscribe.backgroundColor = UIColor.red
-        ButtonSubscribe.setTitle("Plein", for: .normal)
-        ButtonSubscribe.isEnabled  = false
-    }
+
     
     
 } // end of view load
@@ -229,4 +227,13 @@ func isBooked(eventData: [String:Any?], completion: @escaping (Bool) -> ()) {
             
     }
     
+}
+
+// MARK: OTHER HELPERS
+
+// Change color of the button to full
+func ChangeSubscribedButtonToFull(UIB: UIButton) {
+        UIB.backgroundColor = UIColor.red
+        UIB.setTitle("Plein", for: .normal)
+        UIB.isEnabled  = false
 }
